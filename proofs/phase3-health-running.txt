@@ -1,0 +1,6 @@
+-------------------------------
+Instance ID: i-0040d8c0c56a9aaa1
+State:       running
+Health:      [ALERT]
+[WARNING] SystemStatus=initializing, InstanceStatus=initializing
+-------------------------------
