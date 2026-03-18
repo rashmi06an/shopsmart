@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Organic Cotton Tee",
+    "description": "A sustainably sourced, ultra-soft organic cotton t-shirt. Designed for a perfect fit and everyday comfort.",
+    "price": 45.00,
+    "category": "Apparel",
+    "image": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&q=80",
+    "rating": 4.9,
+    "stock": 50
+  },
+  {
+    "id": 2,
+    "name": "Heavyweight Oversized Hoodie",
+    "description": "Premium 450gsm fleece hoodie with a relaxed, modern silhouette. Built to last and keep you warm.",
+    "price": 95.00,
+    "category": "Outerwear",
+    "image": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80",
+    "rating": 4.8,
+    "stock": 30
+  },
+  {
+    "id": 3,
+    "name": "Raw Indigo Slim-Fit Denim",
+    "description": "14oz Japanese selvedge denim that ages beautifully with wear. Classic five-pocket style.",
+    "price": 160.00,
+    "category": "Bottoms",
+    "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=80",
+    "rating": 4.7,
+    "stock": 25
+  },
+  {
+    "id": 4,
+    "name": "Minimalist Harringon Jacket",
+    "description": "Water-resistant shell with a clean, versatile design. The perfect layering piece for transitional weather.",
+    "price": 185.00,
+    "category": "Outerwear",
+    "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80",
+    "rating": 4.6,
+    "stock": 15
+  },
+  {
+    "id": 5,
+    "name": "Merino Wool Knit Beanie",
+    "description": "Fine-knit ethically sourced merino wool for superior warmth and softness. One size fits all.",
+    "price": 35.00,
+    "category": "Accessories",
+    "image": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=800&q=80",
+    "rating": 4.9,
+    "stock": 100
+  },
+  {
+    "id": 6,
+    "name": "Linen Blend Summer Shirt",
+    "description": "Breathable linen-cotton blend with a camp collar. Ideal for warm days and vacation vibes.",
+    "price": 75.00,
+    "category": "Apparel",
+    "image": "https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=800&q=80",
+    "rating": 4.5,
+    "stock": 40
+  }
+]
