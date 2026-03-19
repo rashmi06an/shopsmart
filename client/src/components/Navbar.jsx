@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { ShoppingCart } from 'lucide-react';
+import { ShoppingCart, User, LogOut } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import ThemeToggle from './ThemeToggle';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
     const { cartCount } = useCart();
+    const { user, logout } = useAuth();
 
     return (
         <motion.nav 
@@ -22,6 +24,9 @@ const Navbar = () => {
                 <div className="nav-links">
                     <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
                         Home
+                    </NavLink>
+                    <NavLink to="/shop" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+                        Shop
                     </NavLink>
                     <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
                         About
@@ -48,6 +53,31 @@ const Navbar = () => {
                             </motion.span>
                         )}
                     </Link>
+
+                    {user ? (
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginLeft: '1rem' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-primary)' }}>
+                                <User size={20} />
+                                <span style={{ fontSize: '0.875rem', fontWeight: '600' }}>{user.name.split(' ')[0]}</span>
+                            </div>
+                            <button onClick={logout} style={{ display: 'flex', alignItems: 'center', color: 'var(--text-primary)', background: 'none', border: 'none', cursor: 'pointer' }}>
+                                <LogOut size={20} />
+                            </button>
+                        </div>
+                    ) : (
+                        <Link to="/login" style={{ 
+                            marginLeft: '1rem', 
+                            padding: '0.5rem 1.25rem', 
+                            borderRadius: '99px', 
+                            backgroundColor: 'var(--text-primary)', 
+                            color: 'var(--bg-primary)',
+                            fontSize: '0.875rem',
+                            fontWeight: '600',
+                            textDecoration: 'none'
+                        }}>
+                            Login
+                        </Link>
+                    )}
                 </div>
             </div>
         </motion.nav>

@@ -1,30 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ShoppingBag, Truck, ShieldCheck, Headphones, ArrowRight, Star } from 'lucide-react';
-import ProductCard from '../components/ProductCard';
-import Loader from '../components/Loader';
+import { ArrowRight, Truck, ShieldCheck, Headphones, Star } from 'lucide-react';
+import heroImage from '../assets/hero-premium.png';
 
 const Home = () => {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
-                const res = await axios.get(`${apiUrl}/api/products`);
-                if (res.data.success) {
-                    setProducts(res.data.data);
-                }
-                setLoading(false);
-            } catch (err) {
-                console.error('Error fetching products:', err);
-                setLoading(false);
-            }
-        };
-        fetchProducts();
-    }, []);
+    const navigate = useNavigate();
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -39,32 +20,64 @@ const Home = () => {
         visible: { y: 0, opacity: 1 }
     };
 
-    if (loading) return <Loader />;
 
     return (
         <div className="home-page">
-            {/* Hero Section */}
-            <section className="hero">
-                <div className="container">
+            <section className="hero" style={{ overflow: 'hidden' }}>
+                <div className="container" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', alignItems: 'center', gap: '4rem', padding: '4rem 0' }}>
                     <motion.div 
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         className="hero-content"
                     >
-                        <h1 className="hero-title">
+                        <h1 className="hero-title" style={{ fontSize: '4.5rem', lineHeight: '1.1' }}>
                             Redefine Your <span className="hero-accent">Modern</span> Style.
                         </h1>
-                        <p className="hero-subtitle">
+                        <p className="hero-subtitle" style={{ fontSize: '1.25rem', marginTop: '1.5rem' }}>
                             Curated essentials for the conscious wardrobe. Experience the intersection of ethical craft and timeless design.
                         </p>
-                        <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem' }}>
-                            <button className="btn btn-primary" onClick={() => window.location.href='/shop'}>
-                                Shop Collection <ArrowRight size={20} />
+                        <div style={{ marginTop: '2.5rem' }}>
+                            <button className="btn btn-primary" onClick={() => navigate('/shop')} style={{ padding: '1.25rem 2.5rem', fontSize: '1.125rem' }}>
+                                Shop Collection <ArrowRight size={22} style={{ marginLeft: '0.75rem' }} />
                             </button>
-                            <button className="btn" style={{ border: '1px solid var(--border-color)' }} onClick={() => window.location.href='/shop'}>
-                                View Lookbook
-                            </button>
+                        </div>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1, delay: 0.2 }}
+                        style={{ position: 'relative' }}
+                    >
+                        <div style={{ 
+                            position: 'relative', 
+                            borderRadius: '3rem', 
+                            overflow: 'hidden',
+                            boxShadow: 'var(--card-shadow)',
+                            aspectRatio: '1/1'
+                        }}>
+                            <img 
+                                src={heroImage} 
+                                alt="Premium Collection" 
+                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            />
+                        </div>
+                        <div style={{ 
+                            position: 'absolute', 
+                            bottom: '-2rem', 
+                            right: '-2rem', 
+                            backgroundColor: 'var(--bg-primary)', 
+                            padding: '1.5rem 2rem', 
+                            borderRadius: '1.5rem',
+                            border: '1px solid var(--border-color)',
+                            boxShadow: 'var(--card-shadow)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '1rem'
+                        }}>
+                            <div style={{ width: '12px', height: '12px', borderRadius: '50%', backgroundColor: '#22c55e' }}></div>
+                            <span style={{ fontWeight: '600' }}>New Season Live</span>
                         </div>
                     </motion.div>
                 </div>
@@ -99,26 +112,18 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Products Section */}
+            {/* Featured Section (Placeholder for home page highlights) */}
             <section className="section-padding" style={{ backgroundColor: 'var(--bg-secondary)' }}>
                 <div className="container">
                     <div className="section-title" style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                        <h2>The Season's Best</h2>
-                        <p>Essential pieces crafted for longevity and effortless style.</p>
+                        <h2>Crafted for You</h2>
+                        <p>Essential pieces that define your unique aesthetic.</p>
                     </div>
-                    <motion.div 
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: '-100px' }}
-                        variants={containerVariants}
-                        className="products-grid"
-                    >
-                        {products.map(product => (
-                            <motion.div key={product.id} variants={itemVariants}>
-                                <ProductCard product={product} />
-                            </motion.div>
-                        ))}
-                    </motion.div>
+                    <div style={{ textAlign: 'center' }}>
+                        <button className="btn" onClick={() => navigate('/shop')} style={{ border: '1px solid var(--border-color)' }}>
+                            Explore Full Catalog
+                        </button>
+                    </div>
                 </div>
             </section>
 

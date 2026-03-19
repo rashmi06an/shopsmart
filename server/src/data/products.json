@@ -58,5 +58,65 @@
     "image": "https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=800&q=80",
     "rating": 4.5,
     "stock": 40
+  },
+  {
+    "id": 7,
+    "name": "Essential Silk Slip Dress",
+    "description": "Luxurious 100% mulberry silk slip dress with adjustable straps. Effortless elegance for any occasion.",
+    "price": 120.00,
+    "category": "Apparel",
+    "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80",
+    "rating": 4.9,
+    "stock": 20
+  },
+  {
+    "id": 8,
+    "name": "Tailored Wool Blend Trousers",
+    "description": "Premium wool blend with a hint of stretch for comfort. Features a refined tapered fit.",
+    "price": 140.00,
+    "category": "Bottoms",
+    "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&q=80",
+    "rating": 4.7,
+    "stock": 35
+  },
+  {
+    "id": 9,
+    "name": "Oversized Cashmere Sweater",
+    "description": "Grade-A cashmere spun for ultimate softness. A timeless piece for cozy layering.",
+    "price": 220.00,
+    "category": "Outerwear",
+    "image": "https://images.unsplash.com/photo-1574201635302-388dd92a4c3f?w=800&q=80",
+    "rating": 5.0,
+    "stock": 12
+  },
+  {
+    "id": 10,
+    "name": "Canvas Weekend Tote",
+    "description": "Durable heavy-duty canvas with premium leather handles. Perfect for short getaways or daily hauls.",
+    "price": 85.00,
+    "category": "Accessories",
+    "image": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&q=80",
+    "rating": 4.8,
+    "stock": 45
+  },
+  {
+    "id": 11,
+    "name": "Minimalist Leather Sneakers",
+    "description": "Buttery soft Italian leather upper with a recycled rubber sole. Clean design meet maximum comfort.",
+    "price": 195.00,
+    "category": "Footwear",
+    "image": "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&q=80",
+    "rating": 4.6,
+    "stock": 22
+  },
+  {
+    "id": 12,
+    "name": "High-Waisted Pleated Skirt",
+    "description": "Elegant mid-length skirt with sharp pleats and a flattering high-waist silhouette.",
+    "price": 90.00,
+    "category": "Bottoms",
+    "image": "https://images.unsplash.com/photo-1582142306909-195724d33ffc?w=800&q=80",
+    "rating": 4.7,
+    "stock": 28
   }
 ]
