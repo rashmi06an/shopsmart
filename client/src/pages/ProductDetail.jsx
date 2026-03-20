@@ -37,12 +37,12 @@ const ProductDetail = () => {
 
     return (
         <div className="container">
-            <button onClick={() => navigate(-1)} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-secondary)', margin: '2rem 0' }}>
+            <button onClick={() => navigate(-1)} className="back-btn">
                 <ArrowLeft size={20} />
                 Back to Products
             </button>
             
-            <div className="product-detail">
+            <div className="product-detail grid-responsive">
                 <div className="detail-image-wrapper">
                     <img src={product.image} alt={product.name} className="detail-image" />
                 </div>
@@ -53,15 +53,14 @@ const ProductDetail = () => {
                     <div className="detail-price">${product.price.toFixed(2)}</div>
                     <p className="detail-description">{product.description}</p>
                     
-                    <div style={{ marginBottom: '2rem' }}>
-                        <p style={{ color: product.stock > 0 ? 'var(--success)' : 'var(--danger)', fontWeight: 600 }}>
+                    <div className="stock-status">
+                        <p className={product.stock > 0 ? 'text-success' : 'text-danger'}>
                             {product.stock > 0 ? `In Stock (${product.stock} available)` : 'Out of Stock'}
                         </p>
                     </div>
                     
                     <button 
-                        className="btn-add-cart" 
-                        style={{ padding: '1rem', width: 'auto', minWidth: '250px' }}
+                        className="btn-add-cart detail-add-cart-btn" 
                         onClick={() => addToCart(product)}
                         disabled={product.stock <= 0}
                     >

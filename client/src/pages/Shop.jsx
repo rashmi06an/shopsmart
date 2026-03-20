@@ -50,59 +50,34 @@ const Shop = () => {
 
     return (
         <div className="shop-page container section-padding">
-            <header style={{ marginBottom: '4rem', textAlign: 'center' }}>
-                <h1 style={{ fontSize: '3.5rem', marginBottom: '1.5rem', fontWeight: '700' }}>The Collection</h1>
-                <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto' }}>
+            <header className="shop-header">
+                <h1 className="shop-title">The Collection</h1>
+                <p className="shop-subtitle">
                     Explore our curated selection of sustainably crafted essentials. Designed for the modern wardrobe with a focus on longevity and ethical craft.
                 </p>
             </header>
 
-            <div style={{ 
-                display: 'flex', 
-                flexDirection: 'column', 
-                gap: '2rem', 
-                marginBottom: '4rem',
-                padding: '2rem',
-                backgroundColor: 'var(--bg-secondary)',
-                borderRadius: '1.5rem',
-                border: '1px solid var(--border-color)'
-            }}>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', justifyContent: 'center' }}>
+            <div className="shop-controls">
+                <div className="category-filters">
                     {categories.map(cat => (
                         <button
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
-                            className={`btn ${activeCategory === cat ? 'btn-primary' : ''}`}
-                            style={{ 
-                                padding: '0.625rem 1.5rem', 
-                                fontSize: '0.875rem',
-                                border: activeCategory === cat ? 'none' : '1px solid var(--border-color)',
-                                backgroundColor: activeCategory === cat ? 'var(--accent-primary)' : 'var(--bg-primary)',
-                                color: activeCategory === cat ? 'white' : 'var(--text-primary)'
-                            }}
+                            className={`category-btn ${activeCategory === cat ? 'active' : ''}`}
                         >
                             {cat}
                         </button>
                     ))}
                 </div>
 
-                <div style={{ position: 'relative', maxWidth: '500px', margin: '0 auto', width: '100%' }}>
-                    <Search size={18} style={{ position: 'absolute', left: '1.25rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-secondary)' }} />
+                <div className="search-container">
+                    <Search size={18} className="search-icon" />
                     <input 
                         type="text" 
                         placeholder="Search products..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
-                        style={{ 
-                            width: '100%', 
-                            padding: '1rem 1rem 1rem 3.5rem', 
-                            borderRadius: '99px', 
-                            border: '1px solid var(--border-color)',
-                            backgroundColor: 'var(--bg-primary)',
-                            color: 'var(--text-primary)',
-                            outline: 'none',
-                            fontSize: '1rem'
-                        }}
+                        className="search-input"
                     />
                 </div>
             </div>

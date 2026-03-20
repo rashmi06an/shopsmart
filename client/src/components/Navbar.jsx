@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { ShoppingCart, User, LogOut } from 'lucide-react';
+import { ShoppingCart, User, LogOut, Menu, X } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';
 import ThemeToggle from './ThemeToggle';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
     const { cartCount } = useCart();
     const { user, logout } = useAuth();
+    const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
+    const toggleMenu = () => setMobileMenuOpen(!mobileMenuOpen);
+    const closeMenu = () => setMobileMenuOpen(false);
 
     return (
         <motion.nav 
@@ -21,20 +25,20 @@ const Navbar = () => {
                     SHOPSMART
                 </Link>
 
-                <div className="nav-links">
-                    <NavLink to="/" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+                <div className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+                    <NavLink to="/" onClick={closeMenu} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
                         Home
                     </NavLink>
-                    <NavLink to="/shop" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+                    <NavLink to="/shop" onClick={closeMenu} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
                         Shop
                     </NavLink>
-                    <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+                    <NavLink to="/about" onClick={closeMenu} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
                         About
                     </NavLink>
-                    <NavLink to="/contact" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+                    <NavLink to="/contact" onClick={closeMenu} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
                         Contact
                     </NavLink>
-                    <NavLink to="/faq" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
+                    <NavLink to="/faq" onClick={closeMenu} className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>
                         FAQ
                     </NavLink>
                 </div>
@@ -55,7 +59,7 @@ const Navbar = () => {
                     </Link>
 
                     {user ? (
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginLeft: '1rem' }}>
+                        <div className="hide-on-mobile" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginLeft: '1rem' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-primary)' }}>
                                 <User size={20} />
                                 <span style={{ fontSize: '0.875rem', fontWeight: '600' }}>{user.name.split(' ')[0]}</span>
@@ -65,7 +69,7 @@ const Navbar = () => {
                             </button>
                         </div>
                     ) : (
-                        <Link to="/login" style={{ 
+                        <Link to="/login" className="hide-on-mobile" style={{ 
                             marginLeft: '1rem', 
                             padding: '0.5rem 1.25rem', 
                             borderRadius: '99px', 
@@ -78,6 +82,10 @@ const Navbar = () => {
                             Login
                         </Link>
                     )}
+
+                    <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle Menu">
+                        {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                    </button>
                 </div>
             </div>
         </motion.nav>

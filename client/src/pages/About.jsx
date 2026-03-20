@@ -10,7 +10,7 @@ const About = () => {
                     <motion.h1 
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        style={{ fontSize: 'clamp(3rem, 10vw, 5rem)', marginBottom: '1.5rem' }}
+                        className="hero-title"
                     >
                         Fashion with <span className="hero-accent">Purpose</span>
                     </motion.h1>
@@ -61,7 +61,7 @@ const About = () => {
                     <div className="section-title">
                         <h2>Our Principles</h2>
                     </div>
-                    <div className="features-grid">
+                    <div className="features-grid grid-responsive">
                         <ValueCard icon={<Target />} title="Intentionality" text="Every product in our catalog is there for a reason. We avoid clutter and focus on what truly adds value to your space." />
                         <ValueCard icon={<Award />} title="Excellence" text="We maintain a zero-compromise policy on quality. If a product doesn't meet our rigorous 50-point inspection, it doesn't make the cut." />
                         <ValueCard icon={<Shield />} title="Transparency" text="We are open about our supply chain. We believe you have a right to know where your products come from and how they are made." />

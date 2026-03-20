@@ -9,10 +9,10 @@ const Footer = () => {
                 <div className="footer-grid">
                     <div className="footer-section">
                         <Link to="/" className="footer-logo">SHOPSMART</Link>
-                        <p style={{ marginBottom: '1.5rem', maxWidth: '300px' }}>
+                        <p className="footer-description">
                             Redefining modern style through sustainable, ethically crafted apparel. Quality basics for a conscious life.
                         </p>
-                        <div style={{ display: 'flex', gap: '1rem' }}>
+                        <div className="social-links">
                             <a href="#" className="social-icon"><Facebook size={20} /></a>
                             <a href="#" className="social-icon"><Twitter size={20} /></a>
                             <a href="#" className="social-icon"><Instagram size={20} /></a>
@@ -42,38 +42,22 @@ const Footer = () => {
                     <div className="footer-section">
                         <h4 style={{ marginBottom: '1.5rem' }}>Subscribe</h4>
                         <p style={{ marginBottom: '1rem', fontSize: '0.875rem' }}>Get the latest updates on new collections and exclusive offers.</p>
-                        <form style={{ display: 'flex', gap: '0.5rem' }} onSubmit={e => e.preventDefault()}>
+                        <form className="footer-newsletter" onSubmit={e => e.preventDefault()}>
                             <input 
                                 type="email" 
                                 placeholder="Your email" 
-                                style={{ 
-                                    flex: 1, 
-                                    padding: '0.75rem', 
-                                    borderRadius: '0.5rem', 
-                                    border: '1px solid var(--border-color)',
-                                    backgroundColor: 'var(--bg-primary)',
-                                    color: 'var(--text-primary)',
-                                    outline: 'none'
-                                }} 
+                                className="newsletter-input"
                             />
-                            <button className="btn btn-primary" style={{ padding: '0.5rem 1rem' }}>Join</button>
+                            <button className="btn btn-primary newsletter-btn">Join</button>
                         </form>
                     </div>
                 </div>
 
-                <div style={{ 
-                    borderTop: '1px solid var(--border-color)', 
-                    paddingTop: '2rem', 
-                    display: 'flex', 
-                    justifyContent: 'space-between', 
-                    alignItems: 'center',
-                    flexWrap: 'wrap',
-                    gap: '1rem'
-                }}>
+                <div className="footer-bottom flex-responsive">
                     <p style={{ fontSize: '0.875rem' }}>&copy; {new Date().getFullYear()} ShopSmart Inc. All rights reserved.</p>
-                    <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.875rem' }}>
-                        <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Phone size={14} /> +1 (888) SMART</span>
-                        <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><Mail size={14} /> hello@shopsmart.com</span>
+                    <div className="footer-contact-info">
+                        <span className="contact-item"><Phone size={14} /> +1 (888) SMART</span>
+                        <span className="contact-item"><Mail size={14} /> hello@shopsmart.com</span>
                     </div>
                 </div>
             </div>

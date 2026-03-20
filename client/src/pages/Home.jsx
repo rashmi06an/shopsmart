@@ -24,17 +24,17 @@ const Home = () => {
     return (
         <div className="home-page">
             <section className="hero" style={{ overflow: 'hidden' }}>
-                <div className="container" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1fr)', alignItems: 'center', gap: '4rem', padding: '4rem 0' }}>
+                <div className="container grid-responsive hero-container">
                     <motion.div 
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         className="hero-content"
                     >
-                        <h1 className="hero-title" style={{ fontSize: '4.5rem', lineHeight: '1.1' }}>
+                        <h1 className="hero-title">
                             Redefine Your <span className="hero-accent">Modern</span> Style.
                         </h1>
-                        <p className="hero-subtitle" style={{ fontSize: '1.25rem', marginTop: '1.5rem' }}>
+                        <p className="hero-subtitle">
                             Curated essentials for the conscious wardrobe. Experience the intersection of ethical craft and timeless design.
                         </p>
                         <div style={{ marginTop: '2.5rem' }}>
@@ -91,7 +91,7 @@ const Home = () => {
                         whileInView="visible"
                         viewport={{ once: true }}
                         variants={containerVariants}
-                        className="features-grid"
+                        className="features-grid grid-responsive"
                     >
                         <motion.div variants={itemVariants} className="feature-item">
                             <Truck className="feature-icon" size={40} />
@@ -133,7 +133,7 @@ const Home = () => {
                     <div className="section-title">
                         <h2>What Our Clients Say</h2>
                     </div>
-                    <div className="features-grid">
+                    <div className="features-grid grid-responsive">
                         {[1, 2, 3].map(i => (
                             <motion.div 
                                 key={i}
@@ -175,19 +175,11 @@ const Home = () => {
                     >
                         <h2 style={{ marginBottom: '1rem' }}>Join the Inner Circle</h2>
                         <p style={{ marginBottom: '2.5rem', maxWidth: '500px', margin: '0 auto 2.5rem' }}>Subscribe to receive exclusive early access to new collections and member-only events.</p>
-                        <form style={{ display: 'flex', gap: '1rem', maxWidth: '500px', margin: '0 auto' }} onSubmit={e => e.preventDefault()}>
+                        <form className="newsletter-form flex-responsive" onSubmit={e => e.preventDefault()}>
                             <input 
                                 type="email" 
                                 placeholder="Email address" 
-                                style={{ 
-                                    flex: 1, 
-                                    padding: '1rem 1.5rem', 
-                                    borderRadius: '99px', 
-                                    border: '1px solid var(--border-color)',
-                                    backgroundColor: 'var(--bg-secondary)',
-                                    color: 'var(--text-primary)',
-                                    outline: 'none'
-                                }} 
+                                className="newsletter-input-large"
                             />
                             <button className="btn btn-primary" type="submit">Subscribe</button>
                         </form>

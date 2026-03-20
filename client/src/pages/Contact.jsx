@@ -26,7 +26,7 @@ const Contact = () => {
 
             <section className="section-padding">
                 <div className="container">
-                    <div className="cart-container" style={{ gridTemplateColumns: 'minmax(300px, 1fr) 2fr' }}>
+                    <div className="grid-responsive">
                         <motion.div 
                             initial={{ opacity: 0, x: -30 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -70,10 +70,10 @@ const Contact = () => {
                             initial={{ opacity: 0, x: 30 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            style={{ backgroundColor: 'var(--bg-secondary)', padding: '4rem', borderRadius: '2rem', border: '1px solid var(--border-color)' }}
+                            className="contact-form-container"
                         >
                             <h2 style={{ marginBottom: '2rem' }}>Send Us a Message</h2>
-                            <form style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }} onSubmit={e => e.preventDefault()}>
+                            <form className="grid-responsive" style={{ gap: '1.5rem' }} onSubmit={e => e.preventDefault()}>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                                     <label style={{ fontWeight: 600, fontSize: '0.875rem' }}>First Name</label>
                                     <input type="text" placeholder="John" style={inputStyle} />
@@ -82,15 +82,15 @@ const Contact = () => {
                                     <label style={{ fontWeight: 600, fontSize: '0.875rem' }}>Last Name</label>
                                     <input type="text" placeholder="Doe" style={inputStyle} />
                                 </div>
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', gridColumn: 'span 2' }}>
+                                <div className="grid-span-2" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                                     <label style={{ fontWeight: 600, fontSize: '0.875rem' }}>Email Address</label>
                                     <input type="email" placeholder="john@example.com" style={inputStyle} />
                                 </div>
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', gridColumn: 'span 2' }}>
+                                <div className="grid-span-2" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                                     <label style={{ fontWeight: 600, fontSize: '0.875rem' }}>Message</label>
                                     <textarea placeholder="How can we help you?" style={{ ...inputStyle, height: '150px', resize: 'none' }}></textarea>
                                 </div>
-                                <button className="btn btn-primary" style={{ gridColumn: 'span 2', justifyContent: 'center' }}>
+                                <button className="btn btn-primary grid-span-2" style={{ justifyContent: 'center' }}>
                                     Send Message <Send size={18} />
                                 </button>
                             </form>

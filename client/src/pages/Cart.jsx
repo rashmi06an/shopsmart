@@ -8,11 +8,11 @@ const Cart = () => {
 
     if (cart.length === 0) {
         return (
-            <div className="container" style={{ textAlign: 'center', padding: '6rem 0' }}>
-                <ShoppingBag size={64} color="var(--text-secondary)" style={{ marginBottom: '2rem' }} />
+            <div className="container empty-cart">
+                <ShoppingBag size={64} className="empty-cart-icon" />
                 <h2>Your cart is empty</h2>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>Looks like you haven't added anything to your cart yet.</p>
-                <Link to="/" className="btn-add-cart" style={{ display: 'inline-flex', width: 'auto', padding: '0.75rem 2rem' }}>
+                <p className="empty-cart-text">Looks like you haven't added anything to your cart yet.</p>
+                <Link to="/" className="btn-add-cart start-shopping-btn">
                     Start Shopping
                 </Link>
             </div>
@@ -22,7 +22,7 @@ const Cart = () => {
     return (
         <div className="cart-page">
             <div className="container">
-                <h1 style={{ marginBottom: '3rem' }}>Your Shopping Cart</h1>
+                <h1 className="cart-title">Your Shopping Cart</h1>
                 
                 <div className="cart-container">
                     <div className="cart-items">
@@ -49,8 +49,8 @@ const Cart = () => {
                                 </div>
                             </div>
                         ))}
-                        <div style={{ marginTop: '1.5rem', textAlign: 'right' }}>
-                            <button onClick={clearCart} style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
+                        <div className="cart-actions-footer">
+                            <button onClick={clearCart} className="btn-clear-cart">
                                 Clear Entire Cart
                             </button>
                         </div>
