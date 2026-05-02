@@ -4,7 +4,7 @@
   "description": "Backend API for ShopSmart",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "npm start",
     "dev": "nodemon src/app.js",
     "test": "node test-runner.js",
     "lint": "eslint . || true"
