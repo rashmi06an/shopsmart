@@ -8,6 +8,13 @@ services:
     envVars:
       - key: PORT
         value: 10000
+      - key: NODE_ENV
+        value: production
+      - key: ALLOWED_ORIGINS
+        fromService:
+          type: static
+          name: shopsmart-frontend
+          property: url
 
   - type: static
     name: shopsmart-frontend
