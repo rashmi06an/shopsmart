@@ -1,109 +1,78 @@
-import React, { useState, useEffect } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import axios from 'axios';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Filter, Search } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import Loader from '../components/Loader';
 
 const Shop = () => {
     const [products, setProducts] = useState([]);
-    const [filteredProducts, setFilteredProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [activeCategory, setActiveCategory] = useState('All');
-    const [searchQuery, setSearchQuery] = useState('');
-
-    const categories = ['All', 'Apparel', 'Outerwear', 'Bottoms', 'Accessories', 'Footwear'];
+    const [sortBy, setSortBy] = useState('default');
+    const [maxPrice, setMaxPrice] = useState(250);
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
                 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
                 const res = await axios.get(`${apiUrl}/api/products`);
-                if (res.data.success) {
-                    setProducts(res.data.data);
-                    setFilteredProducts(res.data.data);
-                }
-                setLoading(false);
-            } catch (err) {
-                console.error('Error fetching products:', err);
+                setProducts(res.data.data || []);
+            } finally {
                 setLoading(false);
             }
         };
+
         fetchProducts();
     }, []);
 
-    useEffect(() => {
-        let result = products;
+    const categories = useMemo(() => ['All', ...new Set(products.map((p) => p.category))], [products]);
+
+    const filteredProducts = useMemo(() => {
+        let result = [...products];
+
         if (activeCategory !== 'All') {
-            result = result.filter(p => p.category === activeCategory);
+            result = result.filter((p) => p.category === activeCategory);
         }
-        if (searchQuery) {
-            result = result.filter(p => 
-                p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                p.description.toLowerCase().includes(searchQuery.toLowerCase())
-            );
-        }
-        setFilteredProducts(result);
-    }, [activeCategory, searchQuery, products]);
+
+        result = result.filter((p) => p.price <= Number(maxPrice));
+
+        if (sortBy === 'price-asc') result.sort((a, b) => a.price - b.price);
+        if (sortBy === 'price-desc') result.sort((a, b) => b.price - a.price);
+
+        return result;
+    }, [products, activeCategory, sortBy, maxPrice]);
 
     if (loading) return <Loader />;
 
     return (
-        <div className="shop-page container section-padding">
-            <header className="shop-header">
-                <h1 className="shop-title">The Collection</h1>
-                <p className="shop-subtitle">
-                    Explore our curated selection of sustainably crafted essentials. Designed for the modern wardrobe with a focus on longevity and ethical craft.
-                </p>
-            </header>
+        <div className="container section-padding">
+            <h1 className="shop-title">Products</h1>
 
-            <div className="shop-controls">
-                <div className="category-filters">
-                    {categories.map(cat => (
-                        <button
-                            key={cat}
-                            onClick={() => setActiveCategory(cat)}
-                            className={`category-btn ${activeCategory === cat ? 'active' : ''}`}
-                        >
-                            {cat}
-                        </button>
-                    ))}
-                </div>
+            <div className="shop-layout">
+                <aside className="filter-panel">
+                    <h3>Filters</h3>
+                    <label>Category</label>
+                    <select value={activeCategory} onChange={(e) => setActiveCategory(e.target.value)}>
+                        {categories.map((c) => <option key={c} value={c}>{c}</option>)}
+                    </select>
 
-                <div className="search-container">
-                    <Search size={18} className="search-icon" />
-                    <input 
-                        type="text" 
-                        placeholder="Search products..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="search-input"
-                    />
-                </div>
+                    <label>Max Price: ${maxPrice}</label>
+                    <input type="range" min="20" max="250" step="5" value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)} />
+
+                    <label>Sort By</label>
+                    <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                        <option value="default">Default</option>
+                        <option value="price-asc">Price low to high</option>
+                        <option value="price-desc">Price high to low</option>
+                    </select>
+                </aside>
+
+                <section>
+                    <div className="products-grid">
+                        {filteredProducts.map((product) => <ProductCard key={product.id} product={product} />)}
+                    </div>
+                    {!filteredProducts.length && <p>No products found for this filter.</p>}
+                </section>
             </div>
-
-            <motion.div layout className="products-grid">
-                <AnimatePresence>
-                    {filteredProducts.map(product => (
-                        <motion.div
-                            key={product.id}
-                            layout
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.9 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            <ProductCard product={product} />
-                        </motion.div>
-                    ))}
-                </AnimatePresence>
-            </motion.div>
-
-            {filteredProducts.length === 0 && (
-                <div style={{ textAlign: 'center', padding: '4rem' }}>
-                    <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)' }}>No items found matching your selection.</p>
-                </div>
-            )}
         </div>
     );
 };

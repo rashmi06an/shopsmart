@@ -1,0 +1,927 @@
+0 verbose cli /opt/homebrew/Cellar/node/25.2.0/bin/node /opt/homebrew/bin/npm
+1 info using npm@11.6.2
+2 info using node@v25.2.0
+3 silly config load:file:/opt/homebrew/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/rashmianand/Desktop/shopsmart/server/.npmrc
+5 silly config load:file:/Users/rashmianand/.npmrc
+6 silly config load:file:/opt/homebrew/etc/npmrc
+7 verbose title npm install
+8 verbose argv "install"
+9 verbose logfile logs-max:10 dir:/Users/rashmianand/Desktop/shopsmart/.npm-cache-server/_logs/2026-05-02T11_22_19_305Z-
+10 verbose logfile /Users/rashmianand/Desktop/shopsmart/.npm-cache-server/_logs/2026-05-02T11_22_19_305Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+13 http fetch GET https://registry.npmjs.org/npm attempt 1 failed with ENOTFOUND
+14 silly idealTree buildDeps
+15 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/accepts' ]
+16 silly reify mark retired [
+16 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/ansi-escapes'
+16 silly reify ]
+17 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/anymatch' ]
+18 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/argparse' ]
+19 silly reify mark retired [
+19 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/array-flatten'
+19 silly reify ]
+20 silly reify mark retired [
+20 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/babel-jest'
+20 silly reify ]
+21 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/asap' ]
+22 silly reify mark retired [
+22 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/babel-plugin-istanbul'
+22 silly reify ]
+23 silly reify mark retired [
+23 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/babel-plugin-jest-hoist'
+23 silly reify ]
+24 silly reify mark retired [
+24 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/babel-preset-jest'
+24 silly reify ]
+25 silly reify mark retired [
+25 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/babel-preset-current-node-syntax'
+25 silly reify ]
+26 silly reify mark retired [
+26 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/baseline-browser-mapping'
+26 silly reify ]
+27 silly reify mark retired [
+27 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/basic-auth'
+27 silly reify ]
+28 silly reify mark retired [
+28 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/binary-extensions'
+28 silly reify ]
+29 silly reify mark retired [
+29 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/body-parser'
+29 silly reify ]
+30 silly reify mark retired [
+30 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/brace-expansion'
+30 silly reify ]
+31 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/braces' ]
+32 silly reify mark retired [
+32 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/browserslist'
+32 silly reify ]
+33 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/bser' ]
+34 silly reify mark retired [
+34 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/buffer-from'
+34 silly reify ]
+35 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/bytes' ]
+36 silly reify mark retired [
+36 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/camelcase'
+36 silly reify ]
+37 silly reify mark retired [
+37 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/caniuse-lite'
+37 silly reify ]
+38 silly reify mark retired [
+38 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/char-regex'
+38 silly reify ]
+39 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/chokidar' ]
+40 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/ci-info' ]
+41 silly reify mark retired [
+41 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/cjs-module-lexer'
+41 silly reify ]
+42 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/cliui' ]
+43 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/co' ]
+44 silly reify mark retired [
+44 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/collect-v8-coverage'
+44 silly reify ]
+45 silly reify mark retired [
+45 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/component-emitter'
+45 silly reify ]
+46 silly reify mark retired [
+46 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/content-disposition'
+46 silly reify ]
+47 silly reify mark retired [
+47 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/content-type'
+47 silly reify ]
+48 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/cookie' ]
+49 silly reify mark retired [
+49 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/cookie-signature'
+49 silly reify ]
+50 silly reify mark retired [
+50 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/cookiejar'
+50 silly reify ]
+51 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/cors' ]
+52 silly reify mark retired [
+52 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/create-jest'
+52 silly reify ]
+53 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/debug' ]
+54 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/dedent' ]
+55 silly reify mark retired [
+55 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/deepmerge'
+55 silly reify ]
+56 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/depd' ]
+57 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/destroy' ]
+58 silly reify mark retired [
+58 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/detect-newline'
+58 silly reify ]
+59 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/dezalgo' ]
+60 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/dotenv' ]
+61 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/ee-first' ]
+62 silly reify mark retired [
+62 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/electron-to-chromium'
+62 silly reify ]
+63 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/emittery' ]
+64 silly reify mark retired [
+64 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/emoji-regex'
+64 silly reify ]
+65 silly reify mark retired [
+65 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/encodeurl'
+65 silly reify ]
+66 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/error-ex' ]
+67 silly reify mark retired [
+67 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/escape-html'
+67 silly reify ]
+68 silly reify mark retired [
+68 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/escape-string-regexp'
+68 silly reify ]
+69 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/esprima' ]
+70 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/etag' ]
+71 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/execa' ]
+72 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/exit' ]
+73 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/expect' ]
+74 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/express' ]
+75 silly reify mark retired [
+75 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/fast-safe-stringify'
+75 silly reify ]
+76 silly reify mark retired [
+76 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/fb-watchman'
+76 silly reify ]
+77 silly reify mark retired [
+77 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/fill-range'
+77 silly reify ]
+78 silly reify mark retired [
+78 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/finalhandler'
+78 silly reify ]
+79 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/find-up' ]
+80 silly reify mark retired [
+80 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/formidable'
+80 silly reify ]
+81 silly reify mark retired [
+81 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/forwarded'
+81 silly reify ]
+82 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/fresh' ]
+83 silly reify mark retired [
+83 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/get-caller-file'
+83 silly reify ]
+84 silly reify mark retired [
+84 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/get-package-type'
+84 silly reify ]
+85 silly reify mark retired [
+85 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/get-stream'
+85 silly reify ]
+86 silly reify mark retired [
+86 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/glob-parent'
+86 silly reify ]
+87 silly reify mark retired [
+87 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/graceful-fs'
+87 silly reify ]
+88 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/hasown' ]
+89 silly reify mark retired [
+89 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/html-escaper'
+89 silly reify ]
+90 silly reify mark retired [
+90 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/human-signals'
+90 silly reify ]
+91 silly reify mark retired [
+91 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/http-errors'
+91 silly reify ]
+92 silly reify mark retired [
+92 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/iconv-lite'
+92 silly reify ]
+93 silly reify mark retired [
+93 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/ignore-by-default'
+93 silly reify ]
+94 silly reify mark retired [
+94 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/import-local'
+94 silly reify ]
+95 silly reify mark retired [
+95 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/ipaddr.js'
+95 silly reify ]
+96 silly reify mark retired [
+96 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/is-arrayish'
+96 silly reify ]
+97 silly reify mark retired [
+97 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/is-binary-path'
+97 silly reify ]
+98 silly reify mark retired [
+98 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/is-fullwidth-code-point'
+98 silly reify ]
+99 silly reify mark retired [
+99 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/is-generator-fn'
+99 silly reify ]
+100 silly reify mark retired [
+100 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/is-number'
+100 silly reify ]
+101 silly reify mark retired [
+101 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/is-stream'
+101 silly reify ]
+102 silly reify mark retired [
+102 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/istanbul-lib-coverage'
+102 silly reify ]
+103 silly reify mark retired [
+103 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/istanbul-lib-instrument'
+103 silly reify ]
+104 silly reify mark retired [
+104 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/istanbul-lib-report'
+104 silly reify ]
+105 silly reify mark retired [
+105 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/istanbul-lib-source-maps'
+105 silly reify ]
+106 silly reify mark retired [
+106 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/istanbul-reports'
+106 silly reify ]
+107 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest' ]
+108 silly reify mark retired [
+108 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-changed-files'
+108 silly reify ]
+109 silly reify mark retired [
+109 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-circus'
+109 silly reify ]
+110 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-cli' ]
+111 silly reify mark retired [
+111 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-config'
+111 silly reify ]
+112 silly reify mark retired [
+112 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-diff'
+112 silly reify ]
+113 silly reify mark retired [
+113 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-docblock'
+113 silly reify ]
+114 silly reify mark retired [
+114 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-each'
+114 silly reify ]
+115 silly reify mark retired [
+115 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-environment-node'
+115 silly reify ]
+116 silly reify mark retired [
+116 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-get-type'
+116 silly reify ]
+117 silly reify mark retired [
+117 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-haste-map'
+117 silly reify ]
+118 silly reify mark retired [
+118 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-leak-detector'
+118 silly reify ]
+119 silly reify mark retired [
+119 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-matcher-utils'
+119 silly reify ]
+120 silly reify mark retired [
+120 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-message-util'
+120 silly reify ]
+121 silly reify mark retired [
+121 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-mock'
+121 silly reify ]
+122 silly reify mark retired [
+122 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-pnp-resolver'
+122 silly reify ]
+123 silly reify mark retired [
+123 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-regex-util'
+123 silly reify ]
+124 silly reify mark retired [
+124 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-resolve'
+124 silly reify ]
+125 silly reify mark retired [
+125 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-resolve-dependencies'
+125 silly reify ]
+126 silly reify mark retired [
+126 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-runner'
+126 silly reify ]
+127 silly reify mark retired [
+127 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-runtime'
+127 silly reify ]
+128 silly reify mark retired [
+128 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-snapshot'
+128 silly reify ]
+129 silly reify mark retired [
+129 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-util'
+129 silly reify ]
+130 silly reify mark retired [
+130 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-validate'
+130 silly reify ]
+131 silly reify mark retired [
+131 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-watcher'
+131 silly reify ]
+132 silly reify mark retired [
+132 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-worker'
+132 silly reify ]
+133 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/js-yaml' ]
+134 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jsesc' ]
+135 silly reify mark retired [
+135 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/json-parse-even-better-errors'
+135 silly reify ]
+136 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/json5' ]
+137 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/kleur' ]
+138 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/leven' ]
+139 silly reify mark retired [
+139 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/lines-and-columns'
+139 silly reify ]
+140 silly reify mark retired [
+140 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/locate-path'
+140 silly reify ]
+141 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/make-dir' ]
+142 silly reify mark retired [
+142 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/makeerror'
+142 silly reify ]
+143 silly reify mark retired [
+143 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/media-typer'
+143 silly reify ]
+144 silly reify mark retired [
+144 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/merge-descriptors'
+144 silly reify ]
+145 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/methods' ]
+146 silly reify mark retired [
+146 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/micromatch'
+146 silly reify ]
+147 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/mime' ]
+148 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/mimic-fn' ]
+149 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/morgan' ]
+150 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/ms' ]
+151 silly reify mark retired [
+151 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/negotiator'
+151 silly reify ]
+152 silly reify mark retired [
+152 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/node-int64'
+152 silly reify ]
+153 silly reify mark retired [
+153 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/node-releases'
+153 silly reify ]
+154 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/nodemon' ]
+155 silly reify mark retired [
+155 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/normalize-path'
+155 silly reify ]
+156 silly reify mark retired [
+156 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/npm-run-path'
+156 silly reify ]
+157 silly reify mark retired [
+157 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/on-finished'
+157 silly reify ]
+158 silly reify mark retired [
+158 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/on-headers'
+158 silly reify ]
+159 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/onetime' ]
+160 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/p-locate' ]
+161 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/p-try' ]
+162 silly reify mark retired [
+162 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/parse-json'
+162 silly reify ]
+163 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/parseurl' ]
+164 silly reify mark retired [
+164 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/path-to-regexp'
+164 silly reify ]
+165 silly reify mark retired [
+165 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/picomatch'
+165 silly reify ]
+166 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/pirates' ]
+167 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/pkg-dir' ]
+168 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/prompts' ]
+169 silly reify mark retired [
+169 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/proxy-addr'
+169 silly reify ]
+170 silly reify mark retired [
+170 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/pstree.remy'
+170 silly reify ]
+171 silly reify mark retired [
+171 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/pure-rand'
+171 silly reify ]
+172 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/qs' ]
+173 silly reify mark retired [
+173 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/range-parser'
+173 silly reify ]
+174 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/raw-body' ]
+175 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/readdirp' ]
+176 silly reify mark retired [
+176 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/require-directory'
+176 silly reify ]
+177 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/resolve' ]
+178 silly reify mark retired [
+178 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/resolve-cwd'
+178 silly reify ]
+179 silly reify mark retired [
+179 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/resolve-from'
+179 silly reify ]
+180 silly reify mark retired [
+180 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/resolve.exports'
+180 silly reify ]
+181 silly reify mark retired [
+181 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/safe-buffer'
+181 silly reify ]
+182 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/semver' ]
+183 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/send' ]
+184 silly reify mark retired [
+184 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/serve-static'
+184 silly reify ]
+185 silly reify mark retired [
+185 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/setprototypeof'
+185 silly reify ]
+186 silly reify mark retired [
+186 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/side-channel-list'
+186 silly reify ]
+187 silly reify mark retired [
+187 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/signal-exit'
+187 silly reify ]
+188 silly reify mark retired [
+188 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/simple-update-notifier'
+188 silly reify ]
+189 silly reify mark retired [
+189 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/sisteransi'
+189 silly reify ]
+190 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/slash' ]
+191 silly reify mark retired [
+191 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/source-map'
+191 silly reify ]
+192 silly reify mark retired [
+192 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/source-map-support'
+192 silly reify ]
+193 silly reify mark retired [
+193 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/sprintf-js'
+193 silly reify ]
+194 silly reify mark retired [
+194 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/stack-utils'
+194 silly reify ]
+195 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/statuses' ]
+196 silly reify mark retired [
+196 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/string-length'
+196 silly reify ]
+197 silly reify mark retired [
+197 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/string-width'
+197 silly reify ]
+198 silly reify mark retired [
+198 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/strip-bom'
+198 silly reify ]
+199 silly reify mark retired [
+199 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/strip-final-newline'
+199 silly reify ]
+200 silly reify mark retired [
+200 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/superagent'
+200 silly reify ]
+201 silly reify mark retired [
+201 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/supertest'
+201 silly reify ]
+202 silly reify mark retired [
+202 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/test-exclude'
+202 silly reify ]
+203 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/tmpl' ]
+204 silly reify mark retired [
+204 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/to-regex-range'
+204 silly reify ]
+205 silly reify mark retired [
+205 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/toidentifier'
+205 silly reify ]
+206 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/touch' ]
+207 silly reify mark retired [
+207 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/type-detect'
+207 silly reify ]
+208 silly reify mark retired [
+208 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/type-fest'
+208 silly reify ]
+209 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/type-is' ]
+210 silly reify mark retired [
+210 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/undefsafe'
+210 silly reify ]
+211 silly reify mark retired [
+211 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/undici-types'
+211 silly reify ]
+212 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/unpipe' ]
+213 silly reify mark retired [
+213 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/update-browserslist-db'
+213 silly reify ]
+214 silly reify mark retired [
+214 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/utils-merge'
+214 silly reify ]
+215 silly reify mark retired [
+215 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/v8-to-istanbul'
+215 silly reify ]
+216 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/vary' ]
+217 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/walker' ]
+218 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/which' ]
+219 silly reify mark retired [
+219 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/wrap-ansi'
+219 silly reify ]
+220 silly reify mark retired [
+220 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/write-file-atomic'
+220 silly reify ]
+221 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/y18n' ]
+222 silly reify mark retired [ '/Users/rashmianand/Desktop/shopsmart/server/node_modules/yargs' ]
+223 silly reify mark retired [
+223 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/yargs-parser'
+223 silly reify ]
+224 silly reify mark retired [
+224 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/compat-data'
+224 silly reify ]
+225 silly reify mark retired [
+225 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/parser'
+225 silly reify ]
+226 silly reify mark retired [
+226 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-async-generators'
+226 silly reify ]
+227 silly reify mark retired [
+227 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-bigint'
+227 silly reify ]
+228 silly reify mark retired [
+228 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-class-properties'
+228 silly reify ]
+229 silly reify mark retired [
+229 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-class-static-block'
+229 silly reify ]
+230 silly reify mark retired [
+230 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-import-attributes'
+230 silly reify ]
+231 silly reify mark retired [
+231 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-import-meta'
+231 silly reify ]
+232 silly reify mark retired [
+232 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-json-strings'
+232 silly reify ]
+233 silly reify mark retired [
+233 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-jsx'
+233 silly reify ]
+234 silly reify mark retired [
+234 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-logical-assignment-operators'
+234 silly reify ]
+235 silly reify mark retired [
+235 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-nullish-coalescing-operator'
+235 silly reify ]
+236 silly reify mark retired [
+236 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-object-rest-spread'
+236 silly reify ]
+237 silly reify mark retired [
+237 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-numeric-separator'
+237 silly reify ]
+238 silly reify mark retired [
+238 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-optional-catch-binding'
+238 silly reify ]
+239 silly reify mark retired [
+239 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-optional-chaining'
+239 silly reify ]
+240 silly reify mark retired [
+240 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-private-property-in-object'
+240 silly reify ]
+241 silly reify mark retired [
+241 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-top-level-await'
+241 silly reify ]
+242 silly reify mark retired [
+242 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-typescript'
+242 silly reify ]
+243 silly reify mark retired [
+243 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@bcoe/v8-coverage'
+243 silly reify ]
+244 silly reify mark retired [
+244 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@istanbuljs/load-nyc-config'
+244 silly reify ]
+245 silly reify mark retired [
+245 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@istanbuljs/schema'
+245 silly reify ]
+246 silly reify mark retired [
+246 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/console'
+246 silly reify ]
+247 silly reify mark retired [
+247 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/core'
+247 silly reify ]
+248 silly reify mark retired [
+248 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/environment'
+248 silly reify ]
+249 silly reify mark retired [
+249 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/expect'
+249 silly reify ]
+250 silly reify mark retired [
+250 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/expect-utils'
+250 silly reify ]
+251 silly reify mark retired [
+251 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/fake-timers'
+251 silly reify ]
+252 silly reify mark retired [
+252 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/globals'
+252 silly reify ]
+253 silly reify mark retired [
+253 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/reporters'
+253 silly reify ]
+254 silly reify mark retired [
+254 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/source-map'
+254 silly reify ]
+255 silly reify mark retired [
+255 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/test-result'
+255 silly reify ]
+256 silly reify mark retired [
+256 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/transform'
+256 silly reify ]
+257 silly reify mark retired [
+257 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/test-sequencer'
+257 silly reify ]
+258 silly reify mark retired [
+258 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/types'
+258 silly reify ]
+259 silly reify mark retired [
+259 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@noble/hashes'
+259 silly reify ]
+260 silly reify mark retired [
+260 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@paralleldrive/cuid2'
+260 silly reify ]
+261 silly reify mark retired [
+261 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@sinonjs/commons'
+261 silly reify ]
+262 silly reify mark retired [
+262 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@sinonjs/fake-timers'
+262 silly reify ]
+263 silly reify mark retired [
+263 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/graceful-fs'
+263 silly reify ]
+264 silly reify mark retired [
+264 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/istanbul-lib-coverage'
+264 silly reify ]
+265 silly reify mark retired [
+265 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/istanbul-lib-report'
+265 silly reify ]
+266 silly reify mark retired [
+266 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/istanbul-reports'
+266 silly reify ]
+267 silly reify mark retired [
+267 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/node'
+267 silly reify ]
+268 silly reify mark retired [
+268 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/stack-utils'
+268 silly reify ]
+269 silly reify mark retired [
+269 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/yargs'
+269 silly reify ]
+270 silly reify mark retired [
+270 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/yargs-parser'
+270 silly reify ]
+271 silly reify moves {
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/accepts': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.accepts-LphwJMBK',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/ansi-escapes': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.ansi-escapes-DI4IbL8N',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/anymatch': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.anymatch-wsYaXfD1',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/argparse': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.argparse-r0UStfrs',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/array-flatten': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.array-flatten-1Fe79cth',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/babel-jest': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.babel-jest-tsTQfDPz',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/asap': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.asap-gKkbMSKY',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/babel-plugin-istanbul': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.babel-plugin-istanbul-9QbiYg5Y',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/babel-plugin-jest-hoist': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.babel-plugin-jest-hoist-uqSxDMt6',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/babel-preset-jest': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.babel-preset-jest-mz6uEKBj',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/babel-preset-current-node-syntax': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.babel-preset-current-node-syntax-7NgC3a4a',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/baseline-browser-mapping': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.baseline-browser-mapping-4Kttt9O8',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/basic-auth': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.basic-auth-rMtiQHUx',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/binary-extensions': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.binary-extensions-in6MXJO2',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/body-parser': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.body-parser-rrW0UONX',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/brace-expansion': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.brace-expansion-IUlJxzw7',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/braces': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.braces-9m0HRuBB',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/browserslist': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.browserslist-DICj7a5b',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/bser': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.bser-qZVx7BFW',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/buffer-from': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.buffer-from-4AaDiuib',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/bytes': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.bytes-BophGL5M',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/camelcase': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.camelcase-qeCUf9cD',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/caniuse-lite': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.caniuse-lite-tkeGJJ03',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/char-regex': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.char-regex-w39iYxXe',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/chokidar': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.chokidar-d4gzgkPO',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/ci-info': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.ci-info-VMXmlqqh',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/cjs-module-lexer': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.cjs-module-lexer-7PwG4FmO',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/cliui': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.cliui-aFNuvLcQ',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/co': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.co-hWaZE43i',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/collect-v8-coverage': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.collect-v8-coverage-H9AI303T',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/component-emitter': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.component-emitter-cJuY5QDg',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/content-disposition': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.content-disposition-BA2Yyc8Z',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/content-type': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.content-type-aRRKDkde',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/cookie': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.cookie-iU1HjeyR',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/cookie-signature': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.cookie-signature-L5maBbBN',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/cookiejar': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.cookiejar-RDKEjyYb',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/cors': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.cors-9Pt20Drf',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/create-jest': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.create-jest-d97WqdpJ',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/debug': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.debug-TQfSrZ5H',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/dedent': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.dedent-M4fpuG9M',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/deepmerge': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.deepmerge-gVimkoyY',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/depd': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.depd-lT6NH10h',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/destroy': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.destroy-LQdbmQyh',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/detect-newline': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.detect-newline-ICvEfv8c',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/dezalgo': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.dezalgo-i8BqAMct',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/dotenv': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.dotenv-NKtt7Hpf',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/ee-first': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.ee-first-aDRmX5u8',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/electron-to-chromium': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.electron-to-chromium-kslnKCXu',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/emittery': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.emittery-ZjCNWzyY',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/emoji-regex': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.emoji-regex-nhkxSjpa',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/encodeurl': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.encodeurl-7ykXfoNT',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/error-ex': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.error-ex-TggnriTT',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/escape-html': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.escape-html-28XxRB9R',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/escape-string-regexp': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.escape-string-regexp-ZotcQSKf',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/esprima': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.esprima-R1Wq0979',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/etag': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.etag-MpfbjRxs',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/execa': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.execa-Wz7h22Vg',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/exit': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.exit-HXoKawDj',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/expect': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.expect-7hQC6KsV',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/express': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.express-466HENBc',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/fast-safe-stringify': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.fast-safe-stringify-fUnpUwqW',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/fb-watchman': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.fb-watchman-jhhGeKpi',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/fill-range': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.fill-range-FszxGaSx',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/finalhandler': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.finalhandler-jZrzzhDh',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/find-up': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.find-up-QcYTVz1J',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/formidable': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.formidable-knnRhmsd',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/forwarded': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.forwarded-zSGmkmtV',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/fresh': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.fresh-RWnZNvZI',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/get-caller-file': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.get-caller-file-Yxq7HLB4',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/get-package-type': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.get-package-type-CSkzwyk4',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/get-stream': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.get-stream-NfB4TiGr',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/glob-parent': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.glob-parent-awF6PKpR',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/graceful-fs': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.graceful-fs-VKtBREjE',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/hasown': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.hasown-T0rP0Xii',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/html-escaper': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.html-escaper-SEqeIvwB',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/human-signals': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.human-signals-fvVNwNN2',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/http-errors': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.http-errors-d6Agg6Ik',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/iconv-lite': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.iconv-lite-Q2DMhaI4',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/ignore-by-default': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.ignore-by-default-P56TevHG',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/import-local': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.import-local-WlstUn10',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/ipaddr.js': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.ipaddr.js-f7drRpvP',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/is-arrayish': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.is-arrayish-kdIXlorD',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/is-binary-path': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.is-binary-path-0mNRp8Q4',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/is-fullwidth-code-point': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.is-fullwidth-code-point-RmOde5Th',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/is-generator-fn': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.is-generator-fn-wOyEX8bg',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/is-number': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.is-number-ujtsrP4h',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/is-stream': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.is-stream-yz434Jih',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/istanbul-lib-coverage': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.istanbul-lib-coverage-4mVOIUrW',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/istanbul-lib-instrument': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.istanbul-lib-instrument-QHQrGxkw',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/istanbul-lib-report': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.istanbul-lib-report-pcoHjHyM',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/istanbul-lib-source-maps': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.istanbul-lib-source-maps-O7Rsy1UF',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/istanbul-reports': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.istanbul-reports-zZCXqLSh',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-fi4qaslw',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-changed-files': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-changed-files-LKMD4QNF',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-circus': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-circus-TzLhE6kj',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-cli': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-cli-ZuAaszm1',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-config': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-config-xeyGb68Z',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-diff': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-diff-eEnrWgMW',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-docblock': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-docblock-HhYeecX6',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-each': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-each-OQjbq5Fq',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-environment-node': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-environment-node-65qyVs3M',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-get-type': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-get-type-XacWWUzI',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-haste-map': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-haste-map-Kha0VGvg',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-leak-detector': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-leak-detector-lOchMnpt',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-matcher-utils': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-matcher-utils-A4Gbru3n',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-message-util': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-message-util-lY5Mrdf0',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-mock': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-mock-191Lh1fC',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-pnp-resolver': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-pnp-resolver-Hf6AnjI6',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-regex-util': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-regex-util-IPwET8dq',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-resolve': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-resolve-DQTv4GhG',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-resolve-dependencies': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-resolve-dependencies-jYOZUzth',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-runner': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-runner-o2ozVYFM',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-runtime': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-runtime-hLdk4tmx',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-snapshot': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-snapshot-Im1aSQx2',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-util': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-util-lQGOqpde',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-validate': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-validate-x1qsee9j',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-watcher': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-watcher-MEWBoI8j',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jest-worker': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jest-worker-qboAmAxl',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/js-yaml': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.js-yaml-XXeL5ZPg',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/jsesc': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.jsesc-W699VB3M',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/json-parse-even-better-errors': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.json-parse-even-better-errors-1Lh5D3m1',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/json5': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.json5-LdXLd34c',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/kleur': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.kleur-ryKPoukn',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/leven': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.leven-hLg0zuT1',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/lines-and-columns': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.lines-and-columns-HkPtWa4E',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/locate-path': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.locate-path-eXGn9adV',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/make-dir': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.make-dir-PaZOWgae',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/makeerror': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.makeerror-70UD84cc',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/media-typer': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.media-typer-lSvWRHDD',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/merge-descriptors': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.merge-descriptors-g3y003p2',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/methods': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.methods-eugoJLpU',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/micromatch': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.micromatch-BNzsca7A',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/mime': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.mime-i5wKvCQi',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/mimic-fn': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.mimic-fn-q0qeOkqQ',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/morgan': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.morgan-nwMR3sjx',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/ms': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.ms-RYUC9x1K',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/negotiator': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.negotiator-snDmweZb',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/node-int64': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.node-int64-T5PfzZBR',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/node-releases': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.node-releases-iuLiB8Sm',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/nodemon': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.nodemon-5MRF7gr9',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/normalize-path': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.normalize-path-Oez0neYt',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/npm-run-path': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.npm-run-path-JEuiT3rf',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/on-finished': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.on-finished-1FZvBLuz',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/on-headers': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.on-headers-bMXd32mD',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/onetime': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.onetime-ufoVFJqu',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/p-locate': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.p-locate-lUOeUgSI',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/p-try': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.p-try-q3RKx9mp',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/parse-json': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.parse-json-CAzkkDph',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/parseurl': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.parseurl-dy35Kd2j',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/path-to-regexp': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.path-to-regexp-M7ZwefhP',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/picomatch': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.picomatch-406RdLWi',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/pirates': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.pirates-ANJPi4CV',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/pkg-dir': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.pkg-dir-mvPuPpDA',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/prompts': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.prompts-W69B6isK',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/proxy-addr': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.proxy-addr-tfmJdk0L',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/pstree.remy': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.pstree.remy-4ylba9Mt',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/pure-rand': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.pure-rand-DFicxvvZ',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/qs': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.qs-SwMkgbQ4',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/range-parser': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.range-parser-WpfyL6aV',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/raw-body': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.raw-body-iqudzIsX',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/readdirp': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.readdirp-l0MR2grf',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/require-directory': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.require-directory-B1jXa41F',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/resolve': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.resolve-pA99Ff43',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/resolve-cwd': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.resolve-cwd-ODx1w2zx',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/resolve-from': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.resolve-from-Z7h4iGBT',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/resolve.exports': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.resolve.exports-AsQWrlPH',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/safe-buffer': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.safe-buffer-G5vpokRp',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/semver': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.semver-ejgvyuns',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/send': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.send-6YZHYcDX',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/serve-static': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.serve-static-6krLgtUN',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/setprototypeof': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.setprototypeof-HyX8tIUK',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/side-channel-list': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.side-channel-list-NptsTc5M',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/signal-exit': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.signal-exit-iQzMoyg5',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/simple-update-notifier': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.simple-update-notifier-uOnJeDlF',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/sisteransi': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.sisteransi-kfWfefdJ',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/slash': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.slash-Ipn3rzdL',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/source-map': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.source-map-gatlx6UF',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/source-map-support': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.source-map-support-SkAYtmi1',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/sprintf-js': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.sprintf-js-C4M5e0fm',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/stack-utils': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.stack-utils-yRJG3H5V',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/statuses': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.statuses-DVXTl7kv',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/string-length': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.string-length-mhn2VzZf',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/string-width': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.string-width-D4p6OwtU',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/strip-bom': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.strip-bom-Xd0E25wh',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/strip-final-newline': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.strip-final-newline-mSLwzOBY',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/superagent': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.superagent-dLwwobuS',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/supertest': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.supertest-w3VF0ouw',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/test-exclude': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.test-exclude-0rwooDHt',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/tmpl': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.tmpl-3b7TIpxi',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/to-regex-range': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.to-regex-range-25bOc4B6',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/toidentifier': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.toidentifier-g0iRI9AG',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/touch': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.touch-1LkulFT4',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/type-detect': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.type-detect-0eVC56ND',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/type-fest': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.type-fest-RzR4GCK2',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/type-is': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.type-is-zqLThi28',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/undefsafe': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.undefsafe-CQwHcg17',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/undici-types': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.undici-types-ieazA0Qs',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/unpipe': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.unpipe-5JD6Fyjg',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/update-browserslist-db': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.update-browserslist-db-1GdSWRu0',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/utils-merge': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.utils-merge-fL18hCGc',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/v8-to-istanbul': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.v8-to-istanbul-1JFAzwH9',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/vary': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.vary-afcwo2Xt',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/walker': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.walker-2eaqorzC',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/which': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.which-7QHdJ5mm',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/wrap-ansi': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.wrap-ansi-BKIlEaDu',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/write-file-atomic': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.write-file-atomic-GJ74M2aL',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/y18n': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.y18n-pT1Pteu9',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/yargs': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.yargs-FRjMzc1i',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/yargs-parser': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.yargs-parser-q9DJqj2T',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/compat-data': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.compat-data-KxfzBuTu',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/parser': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.parser-I7E1SwED',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-async-generators': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-async-generators-iJVnZ2OJ',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-bigint': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-bigint-ep1w2ydw',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-class-properties': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-class-properties-tC0B1ufk',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-class-static-block': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-class-static-block-bBsPFxbn',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-import-attributes': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-import-attributes-Lkehji8Q',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-import-meta': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-import-meta-UpW0iIvz',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-json-strings': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-json-strings-2lTEh1rq',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-jsx': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-jsx-u5WMXV5q',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-logical-assignment-operators': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-logical-assignment-operators-HQ6M3OIf',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-nullish-coalescing-operator': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-nullish-coalescing-operator-9XlzLd6S',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-object-rest-spread': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-object-rest-spread-thQzDNvm',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-numeric-separator': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-numeric-separator-MavZndia',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-optional-catch-binding': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-optional-catch-binding-ARETVk7M',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-optional-chaining': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-optional-chaining-ggCXQlAX',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-private-property-in-object': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-private-property-in-object-UaTPyIDJ',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-top-level-await': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-top-level-await-eV9vzF4P',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/plugin-syntax-typescript': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@babel/.plugin-syntax-typescript-7ur5TO3r',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@bcoe/v8-coverage': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@bcoe/.v8-coverage-P8jXxIGP',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@istanbuljs/load-nyc-config': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@istanbuljs/.load-nyc-config-sL06OI5l',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@istanbuljs/schema': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@istanbuljs/.schema-O1HcMeE4',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/console': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/.console-h32ZioRI',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/core': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/.core-1enTcTpZ',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/environment': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/.environment-f1biKNci',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/expect': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/.expect-aNUhA89x',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/expect-utils': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/.expect-utils-rrX03BzV',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/fake-timers': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/.fake-timers-M2g7Vksk',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/globals': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/.globals-NhklRTQS',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/reporters': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/.reporters-lQPsIGpS',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/source-map': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/.source-map-XvfwdmTZ',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/test-result': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/.test-result-rS9PVIx2',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/transform': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/.transform-3JSmuOYk',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/test-sequencer': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/.test-sequencer-m7EHgvky',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/types': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@jest/.types-j77zisik',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@noble/hashes': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@noble/.hashes-OtJIIOwp',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@paralleldrive/cuid2': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@paralleldrive/.cuid2-XM90t5kA',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@sinonjs/commons': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@sinonjs/.commons-IuReSikK',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@sinonjs/fake-timers': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@sinonjs/.fake-timers-o4Sk25d5',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/graceful-fs': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/.graceful-fs-Zbm1SyIS',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/istanbul-lib-coverage': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/.istanbul-lib-coverage-ZnETd7jY',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/istanbul-lib-report': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/.istanbul-lib-report-ePLjirsj',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/istanbul-reports': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/.istanbul-reports-Yw3wsBMF',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/node': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/.node-H63fciar',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/stack-utils': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/.stack-utils-8aUZwjlx',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/yargs': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/.yargs-tGFL7xPk',
+271 silly reify   '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/yargs-parser': '/Users/rashmianand/Desktop/shopsmart/server/node_modules/@types/.yargs-parser-PkTsuQiM'
+271 silly reify }
+272 verbose stack Error: ENOTEMPTY: directory not empty, rename '/Users/rashmianand/Desktop/shopsmart/server/node_modules/babel-plugin-istanbul' -> '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.babel-plugin-istanbul-9QbiYg5Y'
+272 verbose stack     at async Object.rename (node:internal/fs/promises:786:10)
+272 verbose stack     at async moveFile (/opt/homebrew/lib/node_modules/npm/node_modules/@npmcli/fs/lib/move-file.js:30:5)
+272 verbose stack     at async Promise.allSettled (index 7)
+272 verbose stack     at async [reifyPackages] (/opt/homebrew/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/reify.js:313:11)
+272 verbose stack     at async Arborist.reify (/opt/homebrew/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/reify.js:125:5)
+272 verbose stack     at async Install.exec (/opt/homebrew/lib/node_modules/npm/lib/commands/install.js:150:5)
+272 verbose stack     at async Npm.exec (/opt/homebrew/lib/node_modules/npm/lib/npm.js:208:9)
+272 verbose stack     at async module.exports (/opt/homebrew/lib/node_modules/npm/lib/cli/entry.js:67:5)
+273 error code ENOTEMPTY
+274 error syscall rename
+275 error path /Users/rashmianand/Desktop/shopsmart/server/node_modules/babel-plugin-istanbul
+276 error dest /Users/rashmianand/Desktop/shopsmart/server/node_modules/.babel-plugin-istanbul-9QbiYg5Y
+277 error errno -66
+278 error ENOTEMPTY: directory not empty, rename '/Users/rashmianand/Desktop/shopsmart/server/node_modules/babel-plugin-istanbul' -> '/Users/rashmianand/Desktop/shopsmart/server/node_modules/.babel-plugin-istanbul-9QbiYg5Y'
+279 silly unfinished npm timer reify 1777720939588
+280 silly unfinished npm timer reify:retireShallow 1777720939694
+281 verbose cwd /Users/rashmianand/Desktop/shopsmart/server
+282 verbose os Darwin 24.6.0
+283 verbose node v25.2.0
+284 verbose npm  v11.6.2
+285 verbose exit -66
+286 verbose code -66
+287 error A complete log of this run can be found in: /Users/rashmianand/Desktop/shopsmart/.npm-cache-server/_logs/2026-05-02T11_22_19_305Z-debug-0.log

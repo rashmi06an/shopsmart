@@ -3,15 +3,18 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ShoppingCart, ArrowLeft } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useToast } from '../App';
 import Loader from '../components/Loader';
 
 const ProductDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const { addToCart } = useCart();
+    const { showToast } = useToast();
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -23,7 +26,6 @@ const ProductDetail = () => {
                 }
                 setLoading(false);
             } catch (err) {
-                console.error('Error fetching product:', err);
                 setError('Product not found.');
                 setLoading(false);
             }
@@ -36,36 +38,39 @@ const ProductDetail = () => {
     if (error) return <div className="container">{error}</div>;
 
     return (
-        <div className="container">
-            <button onClick={() => navigate(-1)} className="back-btn">
-                <ArrowLeft size={20} />
-                Back to Products
+        <div className="container section-padding">
+            <button onClick={() => navigate('/products')} className="back-btn">
+                <ArrowLeft size={20} /> Back to Products
             </button>
-            
+
             <div className="product-detail grid-responsive">
                 <div className="detail-image-wrapper">
                     <img src={product.image} alt={product.name} className="detail-image" />
                 </div>
-                
+
                 <div className="detail-info">
                     <span className="detail-category">{product.category}</span>
                     <h1>{product.name}</h1>
                     <div className="detail-price">${product.price.toFixed(2)}</div>
                     <p className="detail-description">{product.description}</p>
-                    
-                    <div className="stock-status">
-                        <p className={product.stock > 0 ? 'text-success' : 'text-danger'}>
-                            {product.stock > 0 ? `In Stock (${product.stock} available)` : 'Out of Stock'}
-                        </p>
+
+                    <div className="qty-row">
+                        <label>Quantity</label>
+                        <div className="quantity-control">
+                            <button onClick={() => setQuantity((q) => Math.max(1, q - 1))}>-</button>
+                            <span>{quantity}</span>
+                            <button onClick={() => setQuantity((q) => q + 1)}>+</button>
+                        </div>
                     </div>
-                    
-                    <button 
-                        className="btn-add-cart detail-add-cart-btn" 
-                        onClick={() => addToCart(product)}
-                        disabled={product.stock <= 0}
+
+                    <button
+                        className="btn btn-primary detail-add-cart-btn"
+                        onClick={() => {
+                            for (let i = 0; i < quantity; i += 1) addToCart(product);
+                            showToast(`${quantity} item(s) added to cart`);
+                        }}
                     >
-                        <ShoppingCart size={20} />
-                        Add to Shopping Cart
+                        <ShoppingCart size={20} /> Add to Cart
                     </button>
                 </div>
             </div>
