@@ -6,7 +6,10 @@ export const useTheme = () => useContext(ThemeContext);
 
 export const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState(() => {
-        const savedTheme = localStorage.getItem('theme');
+        const savedTheme =
+  typeof window !== "undefined" && window.localStorage
+    ? localStorage.getItem("theme")
+    : null;
         return savedTheme ? savedTheme : 'light';
     });
 

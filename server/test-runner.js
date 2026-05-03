@@ -1,19 +1,10 @@
-const request = require('supertest');
-const app = require('./src/app');
+#!/usr/bin/env node
+/**
+ * Backward-compatible wrapper so `npm test` inside `server/`
+ * runs the unified root-level test pipeline.
+ */
+const { execSync } = require('child_process');
+const path = require('path');
 
-(async () => {
-  try {
-    const res = await request(app).get('/api/health');
-
-    if (res.statusCode === 200 && res.body.status === 'UP') {
-      console.log("✅ Test Passed");
-      process.exit(0);
-    } else {
-      console.log("❌ Test Failed");
-      process.exit(1);
-    }
-  } catch (err) {
-    console.error("❌ Error:", err);
-    process.exit(1);
-  }
-})();
+const rootRunner = path.resolve(__dirname, '..', 'test-runner.js');
+execSync(`node "${rootRunner}"`, { stdio: 'inherit' });

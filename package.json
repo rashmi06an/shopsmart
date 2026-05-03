@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "test": "node test-runner.js",
+    "test:ci": "node test-runner.js"
+  },
   "devDependencies": {
     "cypress": "^15.12.0"
   }

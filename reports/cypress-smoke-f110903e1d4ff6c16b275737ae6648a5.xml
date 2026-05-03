@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="1.172" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2026-05-03T13:14:11" tests="0" file="cypress/e2e/shop.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="ShopSmart E2E Test" timestamp="2026-05-03T13:14:11" tests="3" time="1.170" failures="0">
+    <testcase name="ShopSmart E2E Test User visits homepage" time="0.431" classname="User visits homepage">
+    </testcase>
+    <testcase name="ShopSmart E2E Test User scrolls and views content" time="0.133" classname="User scrolls and views content">
+    </testcase>
+    <testcase name="ShopSmart E2E Test User interacts with UI" time="0.557" classname="User interacts with UI">
+    </testcase>
+  </testsuite>
+</testsuites>

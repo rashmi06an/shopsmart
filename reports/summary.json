@@ -1,0 +1,36 @@
+{
+  "startedAt": "2026-05-03T13:15:44.532Z",
+  "steps": [
+    {
+      "name": "Unit Tests",
+      "status": "passed",
+      "durationMs": 1437,
+      "tests": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    {
+      "name": "Integration Tests",
+      "status": "passed",
+      "durationMs": 1151,
+      "tests": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    {
+      "name": "E2E Tests",
+      "status": "passed",
+      "durationMs": 1996,
+      "tests": 6,
+      "passed": 6,
+      "failed": 0
+    }
+  ],
+  "totals": {
+    "tests": 8,
+    "passed": 8,
+    "failed": 0,
+    "durationMs": 4584
+  },
+  "finishedAt": "2026-05-03T13:15:52.201Z"
+}
