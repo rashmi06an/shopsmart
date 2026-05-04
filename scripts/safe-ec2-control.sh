@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ===== CONFIG =====
-INSTANCE_ID="i-0040d8c0c56a9aaa1"
+INSTANCE_ID="i-037c0d79923b05b8c"
 
 ACTION=$1
 

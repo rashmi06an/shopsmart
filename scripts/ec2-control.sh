@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INSTANCE_ID="i-0040d8c0c56a9aaa1"
+INSTANCE_ID="i-037c0d79923b05b8c"
 
 if [ "$1" == "start" ]; then
     echo "[INFO] Requesting Start for $INSTANCE_ID..."
