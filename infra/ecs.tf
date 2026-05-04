@@ -35,11 +35,6 @@ resource "aws_cloudwatch_log_group" "shopsmart" {
 resource "aws_ecs_cluster" "main" {
   name = "shopsmart-cluster"
 
-  setting {
-    name  = "containerInsights"
-    value = "enabled"
-  }
-
   tags = { Name = "shopsmart-cluster", Environment = var.environment, ManagedBy = "terraform" }
 }
 
@@ -50,8 +45,8 @@ resource "aws_ecs_task_definition" "shopsmart" {
   requires_compatibilities = ["FARGATE"]
   cpu                      = "256"
   memory                   = "512"
-  execution_role_arn       = aws_iam_role.ecs_task_execution.arn
-  task_role_arn            = aws_iam_role.ecs_task.arn
+  execution_role_arn       = data.aws_iam_role.lab_role.arn
+  task_role_arn            = data.aws_iam_role.lab_role.arn
 
   container_definitions = jsonencode([{
     name      = "shopsmart-api"
@@ -108,7 +103,6 @@ resource "aws_ecs_service" "shopsmart" {
     ignore_changes = [task_definition]
   }
 
-  depends_on = [aws_iam_role_policy_attachment.ecs_task_execution]
 
   tags = { Name = "shopsmart-service", Environment = var.environment, ManagedBy = "terraform" }
 }
