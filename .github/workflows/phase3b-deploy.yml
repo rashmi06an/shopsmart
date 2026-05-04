@@ -1,0 +1,74 @@
+name: Phase 3b — Deploy to ECS
+
+on:
+  workflow_call:
+
+jobs:
+  deploy-ecs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id:     ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token:     ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region:            ${{ secrets.AWS_REGION }}
+
+      - name: Get ECR Image URI
+        id: meta
+        run: |
+          TAG="${GITHUB_SHA::8}"
+          ECR_URL=$(aws ecr describe-repositories --repository-names shopsmart --query 'repositories[0].repositoryUri' --output text)
+          echo "image_uri=${ECR_URL}:${TAG}" >> $GITHUB_OUTPUT
+
+      - name: Download current task definition
+        run: |
+          aws ecs describe-task-definition \
+            --task-definition shopsmart-api \
+            --query taskDefinition \
+            > task-definition.json
+
+      - name: Render updated task definition
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition:  task-definition.json
+          container-name:   shopsmart-api
+          image:            ${{ steps.meta.outputs.image_uri }}
+
+      - name: Deploy to ECS Fargate
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v2
+        with:
+          task-definition:          ${{ steps.task-def.outputs.task-definition }}
+          service:                  shopsmart-api
+          cluster:                  shopsmart-cluster
+          wait-for-service-stability: true
+
+      - name: Verify ECS service is running
+        run: |
+          CLUSTER="shopsmart-cluster"
+          SERVICE="shopsmart-api"
+
+          echo "=== ECS Service Status ==="
+          aws ecs describe-services \
+            --cluster  "$CLUSTER" \
+            --services "$SERVICE" \
+            --query 'services[0].{Status:status,Running:runningCount,Desired:desiredCount,Pending:pendingCount}' \
+            --output table
+
+          RUNNING=$(aws ecs describe-services \
+            --cluster  "$CLUSTER" \
+            --services "$SERVICE" \
+            --query 'services[0].runningCount' \
+            --output text)
+
+          if [ "$RUNNING" -lt "1" ]; then
+            echo "❌ ECS service has 0 running tasks — deployment failed!"
+            exit 1
+          fi
+
+          echo "✅ ECS service is healthy — ${RUNNING} task(s) running"
