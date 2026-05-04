@@ -141,9 +141,21 @@ jobs:
       - name: Capture Terraform outputs
         id: tf-out
         run: |
-          echo "ecr_url=$(terraform output -raw ecr_repository_url)"     >> $GITHUB_OUTPUT
-          echo "ecs_cluster=$(terraform output -raw ecs_cluster_name)"   >> $GITHUB_OUTPUT
-          echo "ecs_service=$(terraform output -raw ecs_service_name)"   >> $GITHUB_OUTPUT
+          # Using -json and jq is more reliable than -raw in CI environments
+          ECR_URL=$(terraform output -json ecr_repository_url | jq -r .)
+          CLUSTER=$(terraform output -json ecs_cluster_name | jq -r .)
+          SERVICE=$(terraform output -json ecs_service_name | jq -r .)
+          
+          # Debug prints (will show in logs)
+          echo "=== Captured Infrastructure Outputs ==="
+          echo "ECR URL: $ECR_URL"
+          echo "ECS Cluster: $CLUSTER"
+          echo "ECS Service: $SERVICE"
+          
+          # Set job outputs
+          echo "ecr_url=$ECR_URL" >> $GITHUB_OUTPUT
+          echo "ecs_cluster=$CLUSTER" >> $GITHUB_OUTPUT
+          echo "ecs_service=$SERVICE" >> $GITHUB_OUTPUT
 
   # ════════════════════════════════════════════════════════════════════════════
   # PHASE 3a — Docker Build & Push to ECR
