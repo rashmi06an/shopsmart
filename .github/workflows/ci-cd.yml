@@ -1,0 +1,275 @@
+name: CI/CD Pipeline
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Triggers
+# ──────────────────────────────────────────────────────────────────────────────
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+# ──────────────────────────────────────────────────────────────────────────────
+# AWS credentials shared across all jobs that need them
+# ──────────────────────────────────────────────────────────────────────────────
+env:
+  AWS_REGION: ${{ secrets.AWS_REGION }}
+
+# ══════════════════════════════════════════════════════════════════════════════
+# PHASE 1 — Run Tests & Upload Reports
+# ══════════════════════════════════════════════════════════════════════════════
+jobs:
+  test:
+    name: "Phase 1 — Tests & Reports"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            client/package-lock.json
+            server/package-lock.json
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Install client dependencies
+        run: npm ci
+        working-directory: client
+
+      - name: Install server dependencies
+        run: npm ci
+        working-directory: server
+
+      - name: Create reports directory
+        run: mkdir -p reports
+
+      # ── Unit tests (Vitest / client) ────────────────────────────────────────
+      - name: Run unit tests (client)
+        working-directory: client
+        run: |
+          npx vitest run \
+            --reporter=default \
+            --reporter=json \
+            --outputFile=../reports/unit-tests.json
+        continue-on-error: false
+
+      # ── Integration tests (Jest / server) ───────────────────────────────────
+      - name: Run integration tests (server)
+        working-directory: server
+        run: |
+          npx jest \
+            --config jest.config.js \
+            --runInBand \
+            --json \
+            --outputFile=../reports/integration-tests.json \
+            tests/
+        env:
+          NODE_OPTIONS: "--max-old-space-size=512"
+
+      # ── Upload test reports as CI artifact ──────────────────────────────────
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports-${{ github.run_number }}
+          path: reports/
+          retention-days: 30
+
+  # ════════════════════════════════════════════════════════════════════════════
+  # PHASE 2 — Terraform: Provision Infrastructure
+  # Runs only on push to main (not on PRs — plan shown in PR, apply on merge)
+  # ════════════════════════════════════════════════════════════════════════════
+  terraform:
+    name: "Phase 2 — Terraform Apply"
+    needs: [test]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    defaults:
+      run:
+        working-directory: infra
+
+    outputs:
+      ecr_url:     ${{ steps.tf-out.outputs.ecr_url }}
+      ecs_cluster: ${{ steps.tf-out.outputs.ecs_cluster }}
+      ecs_service: ${{ steps.tf-out.outputs.ecs_service }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id:     ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token:     ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region:            ${{ secrets.AWS_REGION }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.7.5"
+          terraform_wrapper: false
+
+      - name: Terraform Init
+        run: |
+          terraform init \
+            -backend-config="bucket=${{ secrets.TF_STATE_BUCKET }}" \
+            -backend-config="region=${{ secrets.AWS_REGION }}"
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: |
+          terraform plan \
+            -var="aws_region=${{ secrets.AWS_REGION }}" \
+            -out=tfplan \
+            -input=false
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve -input=false tfplan
+
+      - name: Capture Terraform outputs
+        id: tf-out
+        run: |
+          echo "ecr_url=$(terraform output -raw ecr_repository_url)"     >> $GITHUB_OUTPUT
+          echo "ecs_cluster=$(terraform output -raw ecs_cluster_name)"   >> $GITHUB_OUTPUT
+          echo "ecs_service=$(terraform output -raw ecs_service_name)"   >> $GITHUB_OUTPUT
+
+  # ════════════════════════════════════════════════════════════════════════════
+  # PHASE 3a — Docker Build & Push to ECR
+  # ════════════════════════════════════════════════════════════════════════════
+  build-push:
+    name: "Phase 3a — Docker Build & ECR Push"
+    needs: [terraform]
+    runs-on: ubuntu-latest
+
+    outputs:
+      image_tag: ${{ steps.meta.outputs.image_tag }}
+      image_uri: ${{ steps.meta.outputs.image_uri }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id:     ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token:     ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region:            ${{ secrets.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Set image tag metadata
+        id: meta
+        run: |
+          TAG="${GITHUB_SHA::8}"
+          ECR_URL="${{ needs.terraform.outputs.ecr_url }}"
+          echo "image_tag=${TAG}"           >> $GITHUB_OUTPUT
+          echo "image_uri=${ECR_URL}:${TAG}" >> $GITHUB_OUTPUT
+
+      - name: Build Docker image
+        run: |
+          docker build \
+            --tag shopsmart-api:${{ steps.meta.outputs.image_tag }} \
+            --label "git.sha=${{ github.sha }}" \
+            --label "build.run=${{ github.run_number }}" \
+            ./server
+
+      - name: Push image to ECR
+        run: |
+          ECR_URL="${{ needs.terraform.outputs.ecr_url }}"
+          TAG="${{ steps.meta.outputs.image_tag }}"
+
+          docker tag shopsmart-api:${TAG} ${ECR_URL}:${TAG}
+          docker tag shopsmart-api:${TAG} ${ECR_URL}:latest
+
+          docker push ${ECR_URL}:${TAG}
+          docker push ${ECR_URL}:latest
+
+          echo "✅ Pushed ${ECR_URL}:${TAG}"
+
+  # ════════════════════════════════════════════════════════════════════════════
+  # PHASE 3b — Deploy to ECS Fargate & Verify
+  # ════════════════════════════════════════════════════════════════════════════
+  deploy-ecs:
+    name: "Phase 3b — Deploy to ECS Fargate"
+    needs: [build-push, terraform]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id:     ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token:     ${{ secrets.AWS_SESSION_TOKEN }}
+          aws-region:            ${{ secrets.AWS_REGION }}
+
+      # Pull current task definition JSON from AWS
+      - name: Download current task definition
+        run: |
+          aws ecs describe-task-definition \
+            --task-definition shopsmart-api \
+            --query taskDefinition \
+            > task-definition.json
+
+      # Inject the new ECR image URI into the task definition
+      - name: Render updated task definition
+        id: task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition:  task-definition.json
+          container-name:   shopsmart-api
+          image:            ${{ needs.build-push.outputs.image_uri }}
+
+      # Deploy and wait for service stability
+      - name: Deploy to ECS Fargate
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v2
+        with:
+          task-definition:          ${{ steps.task-def.outputs.task-definition }}
+          service:                  ${{ needs.terraform.outputs.ecs_service }}
+          cluster:                  ${{ needs.terraform.outputs.ecs_cluster }}
+          wait-for-service-stability: true
+
+      # ── Verification ────────────────────────────────────────────────────────
+      - name: Verify ECS service is running
+        run: |
+          CLUSTER="${{ needs.terraform.outputs.ecs_cluster }}"
+          SERVICE="${{ needs.terraform.outputs.ecs_service }}"
+
+          echo "=== ECS Service Status ==="
+          aws ecs describe-services \
+            --cluster  "$CLUSTER" \
+            --services "$SERVICE" \
+            --query 'services[0].{Status:status,Running:runningCount,Desired:desiredCount,Pending:pendingCount}' \
+            --output table
+
+          RUNNING=$(aws ecs describe-services \
+            --cluster  "$CLUSTER" \
+            --services "$SERVICE" \
+            --query 'services[0].runningCount' \
+            --output text)
+
+          if [ "$RUNNING" -lt "1" ]; then
+            echo "❌ ECS service has 0 running tasks — deployment failed!"
+            exit 1
+          fi
+
+          echo "✅ ECS service is healthy — ${RUNNING} task(s) running"

@@ -5,3 +5,14 @@ dist
 build
 coverage
 .vercel
+
+# Terraform — never commit state or provider cache
+*.tfstate
+*.tfstate.backup
+*.tfstate.*.backup
+.terraform/
+.terraform.lock.hcl
+tfplan
+
+# Test reports — generated at runtime, not source
+reports/
