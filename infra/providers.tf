@@ -12,9 +12,9 @@ terraform {
     }
   }
 
-  # Partial backend config — bucket & region are injected by CI via
-  # -backend-config flags so no secrets are hardcoded in source.
   backend "s3" {
+    bucket  = "shopsmart-tfstate-rashmi-123"
+    region  = "us-east-1"
     key     = "shopsmart/terraform.tfstate"
     encrypt = true
   }
