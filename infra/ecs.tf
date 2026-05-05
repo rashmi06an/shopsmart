@@ -25,7 +25,7 @@ resource "aws_security_group" "ecs_tasks" {
 
 # ── CloudWatch Log Group ───────────────────────────────────────────────────────
 resource "aws_cloudwatch_log_group" "shopsmart" {
-  name              = "/ecs/shopsmart"
+  name              = "/ecs/shopsmart-api-logs"
   retention_in_days = 7
 
   tags = { Name = "shopsmart-logs", ManagedBy = "terraform" }
