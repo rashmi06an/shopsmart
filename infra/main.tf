@@ -6,9 +6,10 @@ resource "aws_s3_bucket" "this" {
   bucket = "shopsmart-${random_id.suffix.hex}"
 
   lifecycle {
-    prevent_destroy = true
-  }
+  create_before_destroy = true
+}
 
+depends_on = [aws_lb_listener.http]
   tags = {
     Name        = "ShopSmart S3"
     Environment = "dev"
