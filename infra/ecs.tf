@@ -9,7 +9,7 @@ resource "aws_security_group" "ecs_tasks" {
     from_port   = 5000
     to_port     = 5000
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+security_groups = [aws_security_group.alb.id]
   }
 
   egress {
@@ -84,7 +84,6 @@ resource "aws_ecs_task_definition" "shopsmart" {
   tags = { Name = "shopsmart-task-def", ManagedBy = "terraform" }
 }
 
-# ── ECS Service (Fargate) ──────────────────────────────────────────────────────
 resource "aws_ecs_service" "shopsmart" {
   name            = "shopsmart-api"
   cluster         = aws_ecs_cluster.main.id
@@ -98,11 +97,20 @@ resource "aws_ecs_service" "shopsmart" {
     assign_public_ip = true
   }
 
-  # CI deploy action manages task definition updates; Terraform owns the service shape.
+  # ✅ ADD THIS BLOCK (INSIDE SERVICE)
+  load_balancer {
+    target_group_arn = aws_lb_target_group.ecs.arn
+    container_name   = "shopsmart-api"
+    container_port   = 5000
+  }
+
   lifecycle {
     ignore_changes = [task_definition]
   }
 
-
-  tags = { Name = "shopsmart-service", Environment = var.environment, ManagedBy = "terraform" }
+  tags = {
+    Name        = "shopsmart-service"
+    Environment = var.environment
+    ManagedBy   = "terraform"
+  }
 }

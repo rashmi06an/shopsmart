@@ -15,3 +15,6 @@ variable "container_image" {
   type        = string
   default     = "node:20-alpine"
 }
+variable "alb_port" {
+  default = 80
+}

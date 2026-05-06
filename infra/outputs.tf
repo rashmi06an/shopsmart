@@ -31,3 +31,6 @@ output "vpc_id" {
   description = "VPC ID"
   value       = aws_vpc.main.id
 }
+output "alb_url" {
+  value = aws_lb.main.dns_name
+}
