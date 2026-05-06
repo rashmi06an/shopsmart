@@ -46,6 +46,7 @@ const Navbar = () => {
                     <NavLink to="/about" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>About</NavLink>
                     <NavLink to="/contact" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Contact</NavLink>
                     {user && <NavLink to="/products" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}>Products</NavLink>}
+                    <a href="/api" target="_blank" rel="noreferrer" className="nav-link">Backend API</a>
                 </div>
 
                 <div className="nav-actions">

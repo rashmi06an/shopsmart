@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use('/api/products', productRoutes);
 app.use('/api', authRoutes);
 
-app.get('/', (req, res) => {
+app.get(['/', '/api'], (req, res) => {
     res.status(200).json({
         success: true,
         message: 'ShopSmart backend is live'
