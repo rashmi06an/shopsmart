@@ -5,6 +5,10 @@ resource "random_id" "suffix" {
 resource "aws_s3_bucket" "this" {
   bucket = "shopsmart-${random_id.suffix.hex}"
 
+  lifecycle {
+    prevent_destroy = true
+  }
+
   tags = {
     Name        = "ShopSmart S3"
     Environment = "dev"

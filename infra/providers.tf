@@ -13,10 +13,11 @@ terraform {
   }
 
   backend "s3" {
-    bucket  = "shopsmart-tfstate-rashmi-123"
-    region  = "us-east-1"
-    key     = "shopsmart/terraform.tfstate"
-    encrypt = true
+    bucket         = "shopsmart-tfstate-rashmi-123"
+    region         = "us-east-1"
+    key            = "shopsmart/terraform.tfstate"
+    encrypt        = true
+    dynamodb_table = "terraform-state-lock"
   }
 }
 
