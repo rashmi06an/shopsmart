@@ -74,7 +74,6 @@ ShopSmart utilizes a robust AWS networking and container orchestration topology.
 ├── server/                     # Node.js API Service
 │   └── Dockerfile              # Multi-stage optimized Dockerfile
 └── scripts/
-    └── clean.sh                # Emergency state & resource cleanup utility
 ```
 
 ## Remote State & Backend
@@ -122,7 +121,6 @@ terraform apply   # Provisions VPC, ECR, ECS, and networking in AWS
 |---|---|
 | `terraform validate` | Lints and validates HCL syntax |
 | `terraform output` | Displays key outputs (ECR URL, VPC ID, etc) |
-| `./scripts/clean.sh` | Forcefully purges ECS/ECR resources to clear stale states |
 
 ## CI/CD Pipeline
 ShopSmart uses a highly modular GitHub Actions pipeline triggered on merges to `main`:
@@ -149,7 +147,6 @@ Upon successful apply, Terraform outputs the following parameters:
 | Error | Common Cause | Resolution |
 |---|---|---|
 | `ExpiredToken` | Temporary AWS Learner Lab credentials have expired. | Refresh credentials in the AWS portal and update local terminal/GitHub Secrets. |
-| `ResourceAlreadyExists` | Local Terraform state drifted from actual AWS state. | Run `./scripts/clean.sh` to forcefully purge orphaned AWS resources and reset local state. |
 | `Missing region value` | Initializing Terraform locally without required variables. | Ensure backend configs are provided, or `providers.tf` has hardcoded defaults. |
 
 
