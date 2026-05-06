@@ -10,11 +10,14 @@ variable "environment" {
   default     = "dev"
 }
 
-variable "container_image" {
-  description = "Initial container image for the ECS task definition. Overridden by the CI deploy step after the first ECR push."
+variable "frontend_container_image" {
+  description = "Initial frontend container image for ECS task definition. Overridden by CI/CD after first ECR push."
+  type        = string
+  default     = "nginx:stable-alpine"
+}
+
+variable "backend_container_image" {
+  description = "Initial backend container image for ECS task definition. Overridden by CI/CD after first ECR push."
   type        = string
   default     = "node:20-alpine"
-}
-variable "alb_port" {
-  default = 80
 }

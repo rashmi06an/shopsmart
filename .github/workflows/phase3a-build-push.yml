@@ -26,29 +26,50 @@ jobs:
         id: meta
         run: |
           TAG="${GITHUB_SHA::8}"
-          # Fetch ECR URL directly via AWS CLI
-          ECR_URL=$(aws ecr describe-repositories --repository-names shopsmart --query 'repositories[0].repositoryUri' --output text)
+          FRONTEND_ECR_URL=$(aws ecr describe-repositories --repository-names shopsmart-frontend --query 'repositories[0].repositoryUri' --output text)
+          BACKEND_ECR_URL=$(aws ecr describe-repositories --repository-names shopsmart-backend --query 'repositories[0].repositoryUri' --output text)
           echo "image_tag=${TAG}"           >> $GITHUB_OUTPUT
-          echo "image_uri=${ECR_URL}:${TAG}" >> $GITHUB_OUTPUT
-          echo "ecr_url=${ECR_URL}"         >> $GITHUB_OUTPUT
+          echo "frontend_ecr_url=${FRONTEND_ECR_URL}" >> $GITHUB_OUTPUT
+          echo "backend_ecr_url=${BACKEND_ECR_URL}"   >> $GITHUB_OUTPUT
 
-      - name: Build Docker image
+      - name: Build frontend image
         run: |
           docker build \
-            --tag shopsmart-api:${{ steps.meta.outputs.image_tag }} \
+            --tag shopsmart-frontend:${{ steps.meta.outputs.image_tag }} \
+            --label "git.sha=${{ github.sha }}" \
+            --label "build.run=${{ github.run_number }}" \
+            ./client
+
+      - name: Build backend image
+        run: |
+          docker build \
+            --tag shopsmart-backend:${{ steps.meta.outputs.image_tag }} \
             --label "git.sha=${{ github.sha }}" \
             --label "build.run=${{ github.run_number }}" \
             ./server
 
-      - name: Push image to ECR
+      - name: Push frontend image to ECR
         run: |
-          ECR_URL="${{ steps.meta.outputs.ecr_url }}"
+          ECR_URL="${{ steps.meta.outputs.frontend_ecr_url }}"
           TAG="${{ steps.meta.outputs.image_tag }}"
 
-          docker tag shopsmart-api:${TAG} ${ECR_URL}:${TAG}
-          docker tag shopsmart-api:${TAG} ${ECR_URL}:latest
+          docker tag shopsmart-frontend:${TAG} ${ECR_URL}:${TAG}
+          docker tag shopsmart-frontend:${TAG} ${ECR_URL}:latest
 
           docker push ${ECR_URL}:${TAG}
           docker push ${ECR_URL}:latest
 
-          echo "✅ Pushed ${ECR_URL}:${TAG}"
+          echo "Pushed ${ECR_URL}:${TAG}"
+
+      - name: Push backend image to ECR
+        run: |
+          ECR_URL="${{ steps.meta.outputs.backend_ecr_url }}"
+          TAG="${{ steps.meta.outputs.image_tag }}"
+
+          docker tag shopsmart-backend:${TAG} ${ECR_URL}:${TAG}
+          docker tag shopsmart-backend:${TAG} ${ECR_URL}:latest
+
+          docker push ${ECR_URL}:${TAG}
+          docker push ${ECR_URL}:latest
+
+          echo "Pushed ${ECR_URL}:${TAG}"

@@ -19,7 +19,7 @@ const ProductDetail = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+                const apiUrl = import.meta.env.VITE_API_URL || '';
                 const res = await axios.get(`${apiUrl}/api/products/${id}`);
                 if (res.data.success) {
                     setProduct(res.data.data);

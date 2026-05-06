@@ -24,7 +24,7 @@ const Login = () => {
         setSubmitting(true);
 
         try {
-            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+            const apiUrl = import.meta.env.VITE_API_URL || '';
             const res = await axios.post(`${apiUrl}/api/login`, { email, password });
             login(res.data);
             showToast('Login successful');

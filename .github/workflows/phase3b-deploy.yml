@@ -18,57 +18,57 @@ jobs:
           aws-session-token:     ${{ secrets.AWS_SESSION_TOKEN }}
           aws-region:            ${{ secrets.AWS_REGION }}
 
-      - name: Get ECR Image URI
+      - name: Get ECR image URIs
         id: meta
         run: |
           TAG="${GITHUB_SHA::8}"
-          ECR_URL=$(aws ecr describe-repositories --repository-names shopsmart --query 'repositories[0].repositoryUri' --output text)
-          echo "image_uri=${ECR_URL}:${TAG}" >> $GITHUB_OUTPUT
+          FRONTEND_ECR_URL=$(aws ecr describe-repositories --repository-names shopsmart-frontend --query 'repositories[0].repositoryUri' --output text)
+          BACKEND_ECR_URL=$(aws ecr describe-repositories --repository-names shopsmart-backend --query 'repositories[0].repositoryUri' --output text)
+          echo "frontend_image_uri=${FRONTEND_ECR_URL}:${TAG}" >> $GITHUB_OUTPUT
+          echo "backend_image_uri=${BACKEND_ECR_URL}:${TAG}" >> $GITHUB_OUTPUT
 
-      - name: Download current task definition
+      - name: Download current frontend task definition
         run: |
           aws ecs describe-task-definition \
-            --task-definition shopsmart-api \
+            --task-definition shopsmart-frontend \
             --query taskDefinition \
-            > task-definition.json
+            > frontend-task-definition.json
 
-      - name: Render updated task definition
-        id: task-def
+      - name: Render updated frontend task definition
+        id: frontend-task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         with:
-          task-definition:  task-definition.json
-          container-name:   shopsmart-api
-          image:            ${{ steps.meta.outputs.image_uri }}
+          task-definition:  frontend-task-definition.json
+          container-name:   shopsmart-frontend
+          image:            ${{ steps.meta.outputs.frontend_image_uri }}
 
-      - name: Deploy to ECS Fargate
+      - name: Deploy frontend to ECS Fargate
         uses: aws-actions/amazon-ecs-deploy-task-definition@v2
         with:
-          task-definition:          ${{ steps.task-def.outputs.task-definition }}
-          service:                  shopsmart-api
-          cluster:                  shopsmart-cluster
+          task-definition:            ${{ steps.frontend-task-def.outputs.task-definition }}
+          service:                    shopsmart-frontend
+          cluster:                    shopsmart-cluster
           wait-for-service-stability: true
 
-      - name: Verify ECS service is running
+      - name: Download current backend task definition
         run: |
-          CLUSTER="shopsmart-cluster"
-          SERVICE="shopsmart-api"
+          aws ecs describe-task-definition \
+            --task-definition shopsmart-backend \
+            --query taskDefinition \
+            > backend-task-definition.json
 
-          echo "=== ECS Service Status ==="
-          aws ecs describe-services \
-            --cluster  "$CLUSTER" \
-            --services "$SERVICE" \
-            --query 'services[0].{Status:status,Running:runningCount,Desired:desiredCount,Pending:pendingCount}' \
-            --output table
+      - name: Render updated backend task definition
+        id: backend-task-def
+        uses: aws-actions/amazon-ecs-render-task-definition@v1
+        with:
+          task-definition:  backend-task-definition.json
+          container-name:   shopsmart-backend
+          image:            ${{ steps.meta.outputs.backend_image_uri }}
 
-          RUNNING=$(aws ecs describe-services \
-            --cluster  "$CLUSTER" \
-            --services "$SERVICE" \
-            --query 'services[0].runningCount' \
-            --output text)
-
-          if [ "$RUNNING" -lt "1" ]; then
-            echo "❌ ECS service has 0 running tasks — deployment failed!"
-            exit 1
-          fi
-
-          echo "✅ ECS service is healthy — ${RUNNING} task(s) running"
+      - name: Deploy backend to ECS Fargate
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v2
+        with:
+          task-definition:            ${{ steps.backend-task-def.outputs.task-definition }}
+          service:                    shopsmart-backend
+          cluster:                    shopsmart-cluster
+          wait-for-service-stability: true

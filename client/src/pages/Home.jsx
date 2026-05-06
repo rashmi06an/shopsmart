@@ -15,7 +15,7 @@ const Home = () => {
     useEffect(() => {
         const loadData = async () => {
             try {
-                const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+                const apiUrl = import.meta.env.VITE_API_URL || '';
                 const [productsRes, healthRes] = await Promise.all([
                     axios.get(`${apiUrl}/api/products`),
                     axios.get(`${apiUrl}/api/health`)
